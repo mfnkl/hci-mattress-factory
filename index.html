@@ -1,0 +1,124 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Mattress Factory</title>
+		<link rel="stylesheet" href="style.css">
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$("area").live("click", function(){
+				var next = $(this).attr('data-next');
+				var prev = $(this).attr('data-prev');
+				$("#"+prev).fadeOut('fast');
+				$("#"+next).fadeIn();
+			});
+		</script>
+
+	</head>
+	<body onload=" setTimeout( function(){ window.scrollTo(0, 1) }, 0); " data-spy="scroll">
+	<div id="wrapper">
+		<img src="index-1.png" id="welcome" usemap="#welcome" />
+		<map name="welcome">
+			<area shape="rect" coords="0,0,41,38" data-next="map" data-prev="welcome">
+			<area shape="rect" coords="276,4,314,34" data-next="info" data-prev="welcome">
+			<area shape="rect" coords="230,182,294,198" data-next="fourth" data-prev="welcome">
+			<area shape="rect" coords="0,61,41,108" data-next="fourth" data-prev="welcome">
+			<area shape="rect" coords="0,109,41,156" data-next="third" data-prev="welcome">
+			<area shape="rect" coords="0,157,41,204" data-next="second" data-prev="welcome">
+			<area shape="rect" coords="0,251,41,298" data-next="lower" data-prev="welcome">
+		</map>
+
+
+		<img src="index-4.png" id="fourth" usemap="#fourth" />
+		<map name="fourth">
+			<area shape="rect" coords="0,0,41,38" data-next="map" data-prev="fourth">
+			<area shape="rect" coords="276,4,314,34" data-next="info" data-prev="fourth">
+			<area shape="rect" coords="0,109,41,156" data-next="third" data-prev="fourth">
+			<area shape="rect" coords="0,157,41,204" data-next="second" data-prev="fourth">
+			<area shape="rect" coords="0,204,41,249" data-next="welcome" data-prev="fourth">
+			<area shape="rect" coords="0,251,41,298" data-next="lower" data-prev="fourth">
+			<area shape="rect" coords="57,46,307,192" data-next="detail" data-prev="fourth">
+			<area shape="rect" coords="57,186,307,332" data-next="detail" data-prev="fourth">
+			<area shape="rect" coords="57,330,307,440" data-next="detail" data-prev="fourth">
+		</map>
+
+		<img src="index-3.png" id="third" usemap="#third" />
+		<map name="third">
+			<area shape="rect" coords="0,0,41,38" data-next="map" data-prev="third">
+			<area shape="rect" coords="276,4,314,34" data-next="info" data-prev="third">
+			<area shape="rect" coords="0,61,41,108" data-next="fourth" data-prev="third">
+			<area shape="rect" coords="0,157,41,204" data-next="second" data-prev="third">
+			<area shape="rect" coords="0,204,41,249" data-next="welcome" data-prev="third">
+			<area shape="rect" coords="0,251,41,298" data-next="lower" data-prev="third">
+			<area shape="rect" coords="57,46,307,192" data-next="detail" data-prev="third">
+			<area shape="rect" coords="57,186,307,332" data-next="detail" data-prev="third">
+			<area shape="rect" coords="57,330,307,440" data-next="detail" data-prev="third">
+		</map>
+
+		<img src="index-2.png" id="second" usemap="#second" />
+		<map name="second">
+			<area shape="rect" coords="0,0,41,38" data-next="map" data-prev="second">
+			<area shape="rect" coords="276,4,314,34" data-next="info" data-prev="second">
+			<area shape="rect" coords="0,61,41,108" data-next="fourth" data-prev="second">
+			<area shape="rect" coords="0,109,41,156" data-next="third" data-prev="second">
+			<area shape="rect" coords="0,204,41,249" data-next="welcome" data-prev="second">
+			<area shape="rect" coords="0,251,41,298" data-next="lower" data-prev="second">
+			<area shape="rect" coords="57,46,307,192" data-next="detail" data-prev="second">
+			<area shape="rect" coords="57,186,307,332" data-next="detail" data-prev="second">
+			<area shape="rect" coords="57,330,307,440" data-next="detail" data-prev="second">
+		</map>
+
+		<img src="index-ll.png" id="lower" usemap="#lower" />
+		<map name="lower">
+			<area shape="rect" coords="0,0,41,38" data-next="map" data-prev="lower">
+			<area shape="rect" coords="276,4,314,34" data-next="info" data-prev="lower">
+			<area shape="rect" coords="0,61,41,108" data-next="fourth" data-prev="lower">
+			<area shape="rect" coords="0,109,41,156" data-next="third" data-prev="lower">
+			<area shape="rect" coords="0,157,41,204" data-next="second" data-prev="lower">
+			<area shape="rect" coords="0,204,41,249" data-next="welcome" data-prev="lower">
+			<area shape="rect" coords="57,46,307,192" data-next="detail" data-prev="lower">
+			<area shape="rect" coords="57,186,307,332" data-next="detail" data-prev="lower">
+			<area shape="rect" coords="57,330,307,440" data-next="detail" data-prev="lower">
+		</map>
+		
+		<img src="detail.png" id="detail" usemap="#detail" />
+		<map name="detail">
+			<area shape="rect" coords="0,0,41,38" data-next="fourth" data-prev="detail">
+			<area shape="rect" coords="0,297,320,369" data-next="tagged" data-prev="detail">
+			<area shape="rect" coords="27,375,285,404" data-next="tagging" data-prev="detail">
+		</map>
+
+		<img src="tagging.png" id="tagging" usemap="#tagging" />
+		<map name="tagging">
+			<area shape="rect" coords="0,0,41,38" data-next="detail" data-prev="tagging">
+			<area shape="rect" coords="0,131,320,440" data-next="detail" data-prev="tagging">
+		</map>
+
+		<img src="tagged.png" id="tagged" usemap="#tagged" />
+		<map name="tagged">
+			<area shape="rect" coords="0,0,41,38" data-next="detail" data-prev="tagged">
+			<area shape="rect" coords="10,80,310,212" data-next="detail" data-prev="tagged">
+			<area shape="rect" coords="10,224,310,354" data-next="detail" data-prev="tagged">
+			<area shape="rect" coords="10,370,310,440" data-next="detail" data-prev="tagged">
+		</map>
+
+		<img src="info.png" id="info" usemap="#info" />
+		<map name="info">
+			<area shape="rect" coords="0,0,41,38" data-next="welcome" data-prev="info">
+		</map>
+		
+		<img src="map.png" id="map" usemap="#map" />
+		<map name="map">
+			<area shape="rect" coords="0,0,41,38" data-next="welcome" data-prev="map">
+			<area shape="rect" coords="17,89,72,111" data-next="map2" data-prev="map">
+		</map>
+		
+		<img src="map2.png" id="map2" usemap="#map2" />
+		<map name="map2">
+			<area shape="rect" coords="0,0,41,38" data-next="welcome" data-prev="map2">
+			<area shape="rect" coords="191,96,218,147" data-next="map" data-prev="map2">
+		</map>
+	</div>
+	</body>
+</html>
