@@ -7,12 +7,12 @@
 
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 		<script type="text/javascript">
-			$("area").live("click", function(){
+			$("area").live("click", function(e){
+				e.preventDefault();
 				var next = $(this).attr('data-next');
 				var prev = $(this).attr('data-prev');
 				$("#"+prev).fadeOut('fast');
 				$("#"+next).fadeIn();
-				return false;
 			});
 		</script>
 
