@@ -5,6 +5,7 @@
 		
 		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.1.0-rc.1/jquery.mobile-1.1.0-rc.1.min.js"></script>
+		<script src = "js/jquery.parse.js"></script>
 	</head>
 	<body>
 		<div data-role="page">
@@ -16,9 +17,19 @@
 			</div><!-- /header -->
 
 			<div data-role="content">	
-				<p>Index will go here!</p>
+				<ul id="piece_list"></ul>
 			</div><!-- /content -->
 	
 		</div><!-- /page -->
+
+		<script type="text/html"  id="piece_tmpl">
+			<li data-id="<%= objectId %>"> 
+				<%=title%> 
+				<span style="color:red;"><%= artist%></span>
+			</li>
+		</script>
+
+		<script src="js/tmpl.js"></script>
+		<script src="js/demo.js"></script>
 	</body>
 </html>
