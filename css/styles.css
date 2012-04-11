@@ -49,19 +49,18 @@ ul {
 	padding-top: 10px;
 	padding-bottom: 90px;
 }
-#pictures {
-	padding: 0px;
-	margin: -15px;
-	position: relative;
-}
+
+
 #description{
-	padding: 20px;
+	padding:10px;
+	padding-top: 25px;
 	float: left;
 	position: relative;
 }
 
 #status{
-	margin: 20px;
+	margin: 10px;
+	margin-top: 25px;
 	color:#fff;
 	background-color:#ff0000;
 	padding: 5px;
@@ -73,7 +72,7 @@ ul {
 }
 
 #infolink{
-	margin: 20px;
+	margin: 10px;
 	color: #aaa;
 	text-decoration: underline;
 	position: relative;
@@ -82,8 +81,9 @@ ul {
 }
 #tips{
 	border: 1px solid #ccb396;
-	margin:20px;
+	margin:10px;
 	padding:5px;
+	margin-bottom: 20px;
 	font-style:italic;
 	background-color: #f9e7d3;
 
@@ -92,6 +92,7 @@ ul {
 	border-top: 1px solid #a1a1a1;
 	background-color:#eaeaea;
 	padding: 20px;
+	margin:-10px;
 }
 #tagbutton{
 	font-size: 20px;
@@ -101,6 +102,31 @@ ul {
 	background-repeat: no-repeat;
 	background-position: 70px center;
 	background-color: #c5c5c5;
-	border-radius: 0px;
-	
+	border-radius: 0px;	
+}
+div.imageSub { 
+	position: relative; 
+	margin: -10px;
+	}
+div.imageSub img { 
+	z-index: 1; 
+	}
+div.imageSub div{
+  position: absolute;
+  bottom: 0;
+  padding: 5px;
+  margin: 15px;
+  text-align: left;
+  overflow: hidden;
+}
+div.imageSub div.blackbg {
+  z-index: 2;
+  background-color: #000;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+}
+div.imageSub div.label {
+	z-index: 3;
+
 }
