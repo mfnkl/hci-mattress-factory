@@ -5,7 +5,33 @@
 		
 		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.1.0-rc.1/jquery.mobile-1.1.0-rc.1.min.js"></script>
-		<script src = "js/jquery.parse.js"></script>
+		<!-- ********* <script src = "js/jquery.parse.js"></script> --> 
+	
+		<style type="text/css">
+		.ui-page {
+		    background: url(imgs/lobby.jpg) no-repeat;
+			background-size: 100%;
+		  
+		}
+		
+		.welcome{
+			margin:auto;
+			margin-top:100px;
+			width:500px;
+			height:400px;
+			padding:10px;
+			background-color:rgba(255,255,255,0.9)
+			
+		}
+		
+		.description{
+			font-size:13px;
+		}
+	
+		}
+		</style>
+	
+	
 	</head>
 	<body>
 		<div data-role="page">
@@ -18,6 +44,17 @@
 
 			<div data-role="content">	
 				<ul id="piece_list"></ul>
+				
+				<div class="welcome">
+				<h3> Welcome! Tap the <a href="">4th floor</a> to begin your tour </h3>
+				<p class="description"> You can take the elevator or the stairs </p>
+				<p> <img src="imgs/cafegift.png" align="center"/> Cafe and gift shop on this floor </p>
+				<br/>
+				<h4>Announcements:</h4>
+				<p class="description">March 30th- Our newest installation Gestures:Intimate Friction at Bldg. 1414  </p>		
+				<p class="description">June 15th- Get ready for the Urban Garden Party "Alice At the Factory" </p>
+				</div>	
+					
 			</div><!-- /content -->
 	
 		</div><!-- /page -->
