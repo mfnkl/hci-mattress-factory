@@ -2,6 +2,7 @@
 	<head>
 		<title>Mattress Factory</title>
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0-rc.1/jquery.mobile-1.1.0-rc.1.min.css" />
+		<link rel="stylesheet" href="css/styles.css" />
 		
 		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.1.0-rc.1/jquery.mobile-1.1.0-rc.1.min.js"></script>
@@ -42,6 +43,14 @@
 				<a href="info.html" rel="external" data-icon="info">Info</a>
 			</div><!-- /header -->
 
+			<ul class="nav" id="navbar">
+				<li><a href="#four">4</a></li>
+				<li><a href="#three">3</a></li>
+				<li><a href="#two">2</a></li>
+				<li><a href="#one">1</a></li>
+				<li><a href="#lower">LL</a></li>
+			</ul>
+
 			<div data-role="content">	
 				<ul id="piece_list"></ul>
 				
@@ -61,8 +70,10 @@
 
 		<script type="text/html"  id="piece_tmpl">
 			<li data-id="<%= objectId %>"> 
-				<%=title%> 
-				<span style="color:red;"><%= artist%></span>
+				<a href="detail.html" rel="external" data-transition="slide">
+					<%=title%> 
+					<span style="color:red;"><%= artist%></span>
+				</a>
 			</li>
 		</script>
 

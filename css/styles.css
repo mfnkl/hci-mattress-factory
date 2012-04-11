@@ -1,0 +1,106 @@
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #666;
+}
+
+ul {
+	list-style: none;
+}
+
+.nav {
+	position: fixed;
+	top: 41px;
+	left: 0;
+	height: 100%;
+	background: #555;
+	padding: 0;
+	margin: 0 15px 0 0;
+	text-align: center;
+}
+
+.nav li {
+	border-bottom: 1px solid rgba(255,255,255,.2);
+	padding: 5px 0;
+}
+
+.nav li.active {
+	background: #f00;
+}
+
+.nav li a.ui-link,
+.nav li a.ui-link:hover {
+	display: block;
+	color: #fff;
+	font-size: 1.231em;
+	text-decoration: none;
+	font-weight: bold;
+	padding: 5px 15px;
+	text-shadow: none;
+}
+
+.ui-content {
+	padding-left: 55px;
+}
+
+#content{
+	background-color: #fff;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 10px;
+	padding-bottom: 90px;
+}
+#pictures {
+	padding: 0px;
+	margin: -15px;
+	position: relative;
+}
+#description{
+	padding: 20px;
+	float: left;
+	position: relative;
+}
+
+#status{
+	margin: 20px;
+	color:#fff;
+	background-color:#ff0000;
+	padding: 5px;
+	width: 80px;
+	text-align: center;
+	float: right;
+	position: relative;
+	font-weight: lighter;
+}
+
+#infolink{
+	margin: 20px;
+	color: #aaa;
+	text-decoration: underline;
+	position: relative;
+	float: right;
+	margin-top: -16px;
+}
+#tips{
+	border: 1px solid #ccb396;
+	margin:20px;
+	padding:5px;
+	font-style:italic;
+	background-color: #f9e7d3;
+
+}
+#tags{
+	border-top: 1px solid #a1a1a1;
+	background-color:#eaeaea;
+	padding: 20px;
+}
+#tagbutton{
+	font-size: 20px;
+	border: 1px solid #000;
+	background-image: url('tagpic.png');
+	background-position: left;
+	background-repeat: no-repeat;
+	background-position: 70px center;
+	background-color: #c5c5c5;
+	border-radius: 0px;
+	
+}
