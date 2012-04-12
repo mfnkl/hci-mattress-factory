@@ -18,6 +18,7 @@ ul {
 	text-align: center;
 }
 
+
 .nav li {
 	border-bottom: 1px solid rgba(255,255,255,.2);
 	padding: 5px 0;
@@ -114,7 +115,7 @@ div.imageSub img {
 div.imageSub div{
   position: absolute;
   bottom: 0;
-  padding: 5px;
+  padding: 5px
   margin: 15px;
   text-align: left;
   overflow: hidden;
@@ -129,4 +130,11 @@ div.imageSub div.blackbg {
 div.imageSub div.label {
 	z-index: 3;
 
+}
+
+#floorbuttons{
+	border-top: 1px solid #a1a1a1;
+	background-color:#eaeaea;
+	padding: 20px;
+	margin:-10px;
 }
