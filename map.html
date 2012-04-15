@@ -1,40 +1,117 @@
-<html>
-	<head>
-		<title>Mattress Factory</title>
-		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0-rc.1/jquery.mobile-1.1.0-rc.1.min.css" />
-		
-		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-		<script src="http://code.jquery.com/mobile/1.1.0-rc.1/jquery.mobile-1.1.0-rc.1.min.js"></script>
-	</head>
-	<body>
-		<div data-role="page">
 
-			<div data-role="header">
-				<a href="index.html" rel="external" data-icon="arrow-l">Back</a>
-				<h1>Mattress Factory</h1>
-				<a href="info.html" rel="external" data-icon="info">Info</a>
-			
-			</div><!-- /header -->
-			
-			<div data-role="content">
-			<h3> Street View</h3>
-				   <p><img src="map1.png"/></p>
-				<h3>Floor View: 500 Sampsonia Way</h3>
-				<div class="floorbuttons" data-role="controlgroup">
-					<a href="index.html"rel="external" data-role="button" data-icon="arrow-r" data-iconpos="right" data-corners="false"><img src="floor.gif">4</a>
-					
-					<a href="index.html"rel="external" data-role="button" data-icon="arrow-r" data-iconpos="right"data-corners="false"><img src="floor.gif">3</a>
-					<a href="index.html"rel="external" data-role="button" data-icon="arrow-r" data-iconpos="right"data-corners="false"><img src="floor.gif">2</a>
-					<a href="index.html"rel="external" data-role="button" data-icon="arrow-r" data-iconpos="right"data-corners="false"><img src="floor.gif">1</a>
-					<a href="index.html"rel="external" data-role="button" data-icon="arrow-r" data-iconpos="right"data-corners="false" data-theme="c"><img src="floor.gif">LL</a>
-					
-					
-				
-				</div>
-			
-			</div><!-- /content -->
+<!DOCTYPE html> 
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<title>Mattress Factory</title> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+	<link href="css/styles.css" rel="stylesheet" type="text/css" media="screen" />
+	<style type="text/css"></style>
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+</head> 
+
 	
+<body> 
+	<!-- Start of first page: #one -->
+	<div data-role="page" id="one">
+
+		<div data-role="header">
+			<a href="index.html" rel="external" data-icon="arrow-l">Back</a>
+			<h1>Mattress Factory</h1>
+			<a href="info.html" rel="external" data-icon="info">Info</a>
+		</div><!-- /header -->
+
+		<div data-role="content">	
+			<div id="mappage">
+				<h3> Street View</h3>
+			<div id="map"><img src="imgs/mainmap2.png" USEMAP="#main">
+			<map name="main">
+				<area shape="rect" coords="135,55,30,98" href="#two">
+				<area shape="rect" coords="260,115,223,165" href="#three">
+				<area shape="rect" coords="414,67,350,160" href="#one">
+				</map></div>
+	<h3>Main: 500 Sampsonia Floor View</h3>
+			<div class="floorbuttons" data-role="controlgroup">
+				<a href="index.html"rel="external" data-role="button" data-icon="arrow-r" data-iconpos="right" data-corners="false"><img src="imgs/44floor.png">4</a>
+
+				<a href="index.html"rel="external" data-role="button" data-icon="arrow-r" data-iconpos="right"data-corners="false"><img src="imgs/33floor.png">3</a>
+				<a href="index.html"rel="external" data-role="button" data-icon="arrow-r" data-iconpos="right"data-corners="false"><img src="imgs/22floor.png">2</a>
+				<a href="index.html"rel="external" data-role="button" data-icon="arrow-r" data-iconpos="right"data-corners="false"><img src="imgs/11floor.png">1</a>
+				<a href="index.html"rel="external" data-role="button" data-icon="arrow-r" data-iconpos="right"data-corners="false"><img src="imgs/LLLfloor.png">L</a>
+
+			</div></div>
+
+		</div><!-- /content -->
+
+	</div><!-- /page one -->
+
+<!-- Start of second page: #two -->
+<div data-role="page" id="two">
+
+	<div data-role="header">
+		<a href="index.html" rel="external" data-icon="arrow-l">Back</a>
+		<h1>Mattress Factory</h1>
+		<a href="info.html" rel="external" data-icon="info">Info</a>
+	</div><!-- /header -->
+
+	<div data-role="content" >	
+
+<div id="mappage">
+	<h3> Street View</h3>
+<div id="map"><img src="imgs/mainmap2.png" USEMAP="#main">
+<map name="main">
+	<area shape="rect" coords="135,55,30,98" href="#two">
+	<area shape="rect" coords="260,115,223,165" href="#three">
+	<area shape="rect" coords="414,67,350,160" href="#one">
+	</map>
+	</div>
+	
+	<h3>1414 Monterey Floor View</h3>
+	<div class="floorbuttons" data-role="controlgroup">
+		<a href="index.html"rel="external" data-role="button" data-icon="arrow-r" data-iconpos="right"data-corners="false"><img src="imgs/33floor.png">3</a>
+		<a href="index.html"rel="external" data-role="button" data-icon="arrow-r" data-iconpos="right"data-corners="false"><img src="imgs/22floor.png">2</a>
+		<a href="index.html"rel="external" data-role="button" data-icon="arrow-r" data-iconpos="right"data-corners="false"><img src="imgs/11floor.png">1</a>
+	</div>
+	</div>
+	
+	
+	</div><!-- /content -->
+</div><!-- /page two -->
+
+
+<!-- Start of second page: #three -->
+<div data-role="page" id="three">
+
+	<div data-role="header">
+		<a href="index.html" rel="external" data-icon="arrow-l">Back</a>
+		<h1>Mattress Factory</h1>
+		<a href="info.html" rel="external" data-icon="info">Info</a>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		<div id="mappage">
+			<h3> Street View</h3>
+		<div id="map"><img src="imgs/mainmap2.png" USEMAP="#main">
+		<map name="main">
+			<area shape="rect" coords="135,55,30,98" href="#two">
+			<area shape="rect" coords="260,115,223,165" href="#three">
+			<area shape="rect" coords="414,67,350,160" href="#one">
+			</map>
+			</div>
+<h3>516 Sampsonia Floor View (Open Soon)</h3>
+		<div class="floorbuttons" data-role="controlgroup">
+
+
+		</div></div>
 		
-		</div><!-- /page -->
-	</body>
+	</div><!-- /content -->
+
+</div><!-- /page two -->
+
+
+
+</body>
 </html>
