@@ -1,7 +1,39 @@
+/* Index page */
+.floor {
+	min-height: 400px;
+}
 
-body,td,th {
-	font-family: Arial, Helvetica, sans-serif;
-	color: #666;
+.floor ul {
+	padding: 0;
+	margin: 0 0 0 5px;
+}
+
+.floor li {
+	width: 250px;
+	height: 125px;
+	font-size: .88em;
+	line-height: 1.5em;
+	letter-spacing: .05em;
+	margin-bottom: 30px;
+}
+
+.floor li a {
+	text-decoration: none;
+	color: #fff;
+}
+
+.floor .overlay {
+	display: inline-block;
+	padding: 2%;
+	width: 96%;
+	background: rgba(0,0,0,.7);
+	position: relative;
+	top: -50px;
+}
+
+.floor .artist {
+	display: block;
+	text-transform: uppercase;
 }
 
 ul {
@@ -15,7 +47,7 @@ ul {
 	height: 100%;
 	background: #555;
 	padding: 0;
-	margin: 0 15px 0 0;
+	margin: 0;
 	text-align: center;
 }
 
@@ -29,13 +61,14 @@ ul {
 }
 
 .nav li a.ui-link,
-.nav li a.ui-link:hover {
+.nav li a.ui-link:hover,
+.nav li a.ui-link:visited {
 	display: block;
 	color: #fff;
 	font-size: 1.231em;
 	text-decoration: none;
 	font-weight: bold;
-	padding: 5px 15px;
+	padding: 5px 10px;
 	text-shadow: none;
 }
 
