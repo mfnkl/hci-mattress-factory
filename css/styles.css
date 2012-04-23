@@ -1,0 +1,212 @@
+#header {
+	position:absolute; z-index:3;
+	top:0; left:0;
+	width:100%;
+	line-height:45px;
+	background-color:#222;
+	padding:5px 0;
+	color:#eee;
+	font-size:20px;
+	text-align:center;
+}
+
+#wrapper {	
+	position:absolute; z-index:1;
+	top: 35px;
+	left: 45px;
+	height: 100%;
+	width:100%;
+	overflow:auto;
+}
+
+/* Index page */
+.floor {
+	min-height: 400px;
+}
+
+.floor ul {
+	padding: 0;
+	margin: 0 0 0 5px;
+}
+
+.floor li {
+	width: 250px;
+	height: 125px;
+	font-size: .88em;
+	line-height: 1.5em;
+	letter-spacing: .05em;
+	margin-bottom: 30px;
+}
+
+.floor li a {
+	text-decoration: none;
+	color: #fff;
+}
+
+.floor .overlay {
+	display: inline-block;
+	padding: 2%;
+	width: 96%;
+	background: rgba(0,0,0,.7);
+	position: relative;
+	top: -45px;
+}
+
+.floor .artist {
+	display: block;
+	text-transform: uppercase;
+}
+
+.nav {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	background: #666;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	z-index: 2;
+}
+
+.nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.nav ul:first-child {
+	margin-top: 35px;
+}
+
+.nav li {
+	border-bottom: 1px solid rgba(255,255,255,.2);
+	padding: 5px 0;
+}
+
+.nav li.active {
+	background: #f00;
+}
+
+.nav li a,
+.nav li a:hover,
+.nav li a:visited {
+	display: block;
+	color: #fff;
+	font-size: 1.231em;
+	text-decoration: none;
+	font-weight: bold;
+	padding: 5px 8px;
+	text-shadow: none;
+	min-width: 18px;
+}
+
+.nav .building-title {
+	font-weight: bold;
+	color: #fff;
+	background: #444 url(../img/building.png) no-repeat center 1px;
+	padding: 22px 5px 3px 5px;
+}
+
+.nav-516,
+.nav-1414 {
+	display: none;
+}
+
+.ui-content {
+	padding-left: 55px;
+}
+
+#mappage{
+margin-left:-40px;	
+}
+
+
+
+#content{
+	background-color: #fff;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 10px;
+	padding-bottom: 90px;
+}
+
+
+#description{
+	padding:10px;
+	padding-top: 25px;
+	float: left;
+	position: relative;
+}
+
+#status{
+	margin: 10px;
+	margin-top: 25px;
+	color:#fff;
+	background-color:#ff0000;
+	padding: 5px;
+	width: 80px;
+	text-align: center;
+	float: right;
+	position: relative;
+	font-weight: lighter;
+}
+
+#infolink{
+	margin: 10px;
+	color: #aaa;
+	text-decoration: underline;
+	position: relative;
+	float: right;
+	margin-top: -16px;
+}
+#tips{
+	border: 1px solid #ccb396;
+	margin:10px;
+	padding:5px;
+	margin-bottom: 20px;
+	font-style:italic;
+	background-color: #f9e7d3;
+}
+#tags{
+	border-top: 1px solid #a1a1a1;
+	background-color:#eaeaea;
+	padding: 20px;
+	margin:-10px;
+}
+#tagbutton{
+	font-size: 20px;
+	border: 1px solid #000;
+	background-image: url('tagpic.png');
+	background-position: left;
+	background-repeat: no-repeat;
+	background-position: 70px center;
+	background-color: #c5c5c5;
+	border-radius: 0px;	
+}
+div.imageSub { 
+	position: relative; 
+	margin: -10px;
+	}
+div.imageSub img { 
+	z-index: 1; 
+	}
+div.imageSub div{
+  position: absolute;
+  bottom: 0;
+  padding: 5px
+  margin: 15px;
+  text-align: left;
+  overflow: hidden;
+}
+div.imageSub div.blackbg {
+  z-index: 2;
+  background-color: #000;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+}
+div.imageSub div.label {
+	z-index: 3;
+
+}
