@@ -1,112 +1,158 @@
 <html>
 	<head>
 		<title>Mattress Factory</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=0;" /> 
 
-		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0-rc.1/jquery.mobile-1.1.0-rc.1.min.css" />
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
 		<link rel="stylesheet" href="css/styles.css" />
-	</head>
-	<body>
-		<div data-role="page" id="index">
-
-			<div data-role="header" data-position="fixed">
-				<a href="map.html" rel="external" data-icon="grid">Map</a>
-				<h1><img src="mflogo.png"></h1>
-				<a href="info.html" rel="external" data-icon="info">Info</a>
-			</div><!-- /header -->
-
-			<ul class="nav" id="navbar">
-				<li><a href="#floor-4" class="scrollTo" data-ajax="false">4</a></li>
-				<li><a href="#floor-3" class="scrollTo">3</a></li>
-				<li><a href="#floor-2" class="scrollTo">2</a></li>
-				<li><a href="#floor-1" class="scrollTo">1</a></li>
-				<li><a href="#floor-0" class="scrollTo">LL</a></li>
-			</ul>
-
-			<div data-role="content">
-				<div id="gallery" data-spy="scroll">				
-					
-				</div>
-			</div><!-- /content -->
-	
-		</div><!-- /page -->
-
-		<!-- Start of second page -->
-		<div data-role="page" id="details">
-
-			<div data-role="header">
-				<a href="#index" data-role="button" data-icon="arrow-l">Back</a>
-				<h1><img src="mflogo.png"></h1>
-				<a href="info.html" rel="external" data-icon="info">Info</a>
-			</div><!-- /header -->
-
-		<div data-role="content">	
-			<div class="imageSub">
-					<img src="http://www.mattress.org/media/MattressFactory_pablovalbue.jpg" />
-					<div class="blackbg"></div>
-					<div class="label"><a name="fb_share" type="icon" share_url="http://farm7.staticflickr.com/6117/6329646852_3aa7a84a86_o.jpg"></a> </div>
-					</div><!--pictures-->
-					
-					<div id="status">
-						temporary
-					</div>
-					<div id="description">
-						PABLO VALBUENA <br />
-						Para-Site [mattress factory], 2011<br />
-						video projection on architecture
-					</div>
-					<br /><br /><br /><br />
-					<div id="infolink">
-						More Info >>
-					</div>
-					<br />
-					<div id="tips">
-						Tip: Watch entire sequence. Please no photography or video.
-					</div>
-					<div id="tags">
-						tags go here
-						<div id="tagbutton" data-role="button">What do you think?</div>
-						</div>	
-		</div><!-- /content -->
-
-		</div><!-- /page -->
-
 
 		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-		<script src = "js/jquery.parse.js"></script>
-		<script src="js/tmpl.js"></script>
-		<script src="js/demo.js"></script>
-		<script src="js/scroll.js"></script>
-		<script src="js/bootstrap-scrollspy.js"></script>
+		<script type="text/javascript" src="js/iscroll.js"></script>
+		<script type="text/javascript">
+			var myScroll;
+			function loaded() {
+				myScroll = new iScroll('wrapper');
+				myScroll.scrollToElement('#floor-1', 800);
+				$('a.first').parent().addClass('active');
+				
+				$('a.scrollTo').bind('click',function(event){
+					var that = $(this);
+    				var element = that.attr('data-link');
+    				$('.nav li').removeClass('active');
+    				$('.nav a[data-link="'+element+'"]').parent().addClass('active');
+
+    				myScroll.scrollToElement(element, 800);
+  				});
+
+  				$('.building-title').bind('click',function(event){
+  					var that = $(this);
+    				var navItems = that.attr('data-to-show');
+    				$('.nav li[class!="building-title"]').slideUp();
+    				$(navItems).slideDown();
+  				});
+			}
+
+			document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+
+			/* Use this for high compatibility (iDevice + Android)*/
+			document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 200); }, false);
+
+			
+		</script>
+	</head>
+	<body>
+		<div id="header">
+			<img src="mflogo.png">
+		</div>
+		<div class="container">
+			<div class="nav" id="navbar">
+				<ul>
+					<li class="building-title" data-to-show=".nav-500">500</li>
+					<li class="nav-500"><a data-link="#floor-4" class="scrollTo">4</a></li>
+					<li class="nav-500"><a data-link="#floor-3" class="scrollTo">3</a></li>
+					<li class="nav-500"><a data-link="#floor-2" class="scrollTo">2</a></li>
+					<li class="nav-500"><a data-link="#floor-1" class="scrollTo first">1</a></li>
+					<li class="nav-500"><a data-link="#floor-0" class="scrollTo">LL</a></li>
+					
+					<li class="building-title" data-to-show=".nav-1414">1414</li>
+					<li class="nav-1414"><a data-link="#floor-3-1414" class="scrollTo">3</a></li>
+					<li class="nav-1414"><a data-link="#floor-2-1414" class="scrollTo">2</a></li>
+					<li class="nav-1414"><a data-link="#floor-1-1414" class="scrollTo first">1</a></li>
+					
+					<li class="building-title" data-to-show=".nav-516">516</li>
+					<li class="nav-516"><a data-link="#floor-4-516" class="scrollTo">4</a></li>
+					<li class="nav-516"><a data-link="#floor-3-516" class="scrollTo">3</a></li>
+					<li class="nav-516"><a data-link="#floor-2-516" class="scrollTo">2</a></li>
+					<li class="nav-516"><a data-link="#floor-1-516" class="scrollTo first">1</a></li>
+				</ul>
+			</div>
+			<div id="wrapper">				
+				<div id="scroller" data-spy="scroll" data-target="#navbar">
+					<section class="floor" id="floor-4">
+						<ul>
+							<li> 
+							  <a>
+								<img src="http://placehold.it/250x125" />
+								<span class="overlay">	
+									<span class="artist">Than Htay Maung</span>
+									My Offering
+								</span>
+							  </a>
+							</li>
+							<li> 
+							  <a>
+								<img src="http://placehold.it/250x125" />
+								<span class="overlay">	
+									<span class="artist">Pablo Valbuena</span>
+									Para-Site [mattress factory]
+								</span>
+							  </a>
+							</li>
+						</ul>
+					</section>
+					<section class="floor" id="floor-3">
+						<ul>
+							<li> 
+							  <a>
+								<img src="http://placehold.it/250x125" />
+								<span class="overlay">	
+									<span class="artist">Veronica Ryan</span>
+									The Weather Inside
+								</span>
+							  </a>
+							</li>
+						</ul>
+					</section>
+					<section class="floor" id="floor-2">
+						<ul>
+							<li> 
+							  <a>
+								<img src="http://placehold.it/250x125" />
+								<span class="overlay">	
+									<span class="artist">James Turrell</span>
+									Catso, Red (1967)
+								</span>
+							  </a>
+							</li>
+						</ul>
+					</section>
+					<section class="floor" id="floor-1">
+						<div class="welcome">
+							<h3> Welcome! Tap the <a data-link="#floor-4" class="scrollTo">4th floor</a> to begin your tour </h3>
+							<p class="description"> You can take the elevator or the stairs </p>
+							<p>Cafe and gift shop on this floor </p>
+							<br/>
+							<h4>Announcements:</h4>
+							<p class="description">March 30th- Our newest installation Gestures:Intimate Friction at Bldg. 1414  </p>		
+							<p class="description">June 15th- Get ready for the Urban Garden Party "Alice At the Factory" </p>
+						</div>
+					</section>
+					<section class="floor" id="floor-0">
+						<ul>
+							<li> 
+							  <a>
+								<img src="http://placehold.it/250x125" />
+								<span class="overlay">	
+									<span class="artist">Natalia Gonzalez</span>
+									Light Recordings
+								</span>
+							  </a>
+							</li>
+						</ul>
+					</section>
+				</div>	
+			</div>
+		</div>
+
+		
+		<!-- <script type="application/javascript" src = "js/jquery.parse.js"></script>
+		<script type="application/javascript" src="js/tmpl.js"></script>
+		<script type="application/javascript" src="js/demo.js"></script> -->
+		<script type="application/javascript" src="js/scroll.js"></script>
+		<script type="application/javascript" src="js/bootstrap.min.js"></script>
 		<script>
 	    	$("#navbar").scrollspy();
 	    </script>
-		<script src="http://code.jquery.com/mobile/1.1.0-rc.1/jquery.mobile-1.1.0-rc.1.min.js"></script>
-
-		<script type="text/html" id="piece_tmpl">
-			<li data-id="<%= objectId %>"> 
-				<a href="#details" data-transition="slide">
-					<img src="http://placehold.it/250x125" />
-					<span class="overlay">	
-						<span class="artist"><%= artist%></span>
-						<%=title%>
-					</span>
-				</a>
-			</li>
-		</script>
-
-		<script type="text/html" id="welcome_message">
-			<div class="welcome">
-				<h3> Welcome! Tap the <a href="#floor-4" class="scrollTo">4th floor</a> to begin your tour </h3>
-				<p class="description"> You can take the elevator or the stairs </p>
-				<p> <img src="imgs/cafegift.png" align="center"/> Cafe and gift shop on this floor </p>
-				<br/>
-				<h4>Announcements:</h4>
-				<p class="description">March 30th- Our newest installation Gestures:Intimate Friction at Bldg. 1414  </p>		
-				<p class="description">June 15th- Get ready for the Urban Garden Party "Alice At the Factory" </p>
-			</div>	
-		</script>
-
 		
 	</body>
 </html>

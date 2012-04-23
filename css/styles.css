@@ -1,3 +1,24 @@
+#header {
+	position:absolute; z-index:3;
+	top:0; left:0;
+	width:100%;
+	line-height:45px;
+	background-color:#222;
+	padding:5px 0;
+	color:#eee;
+	font-size:20px;
+	text-align:center;
+}
+
+#wrapper {	
+	position:absolute; z-index:1;
+	top: 35px;
+	left: 45px;
+	height: 100%;
+	width:100%;
+	overflow:auto;
+}
+
 /* Index page */
 .floor {
 	min-height: 400px;
@@ -28,7 +49,7 @@
 	width: 96%;
 	background: rgba(0,0,0,.7);
 	position: relative;
-	top: -50px;
+	top: -45px;
 }
 
 .floor .artist {
@@ -36,19 +57,26 @@
 	text-transform: uppercase;
 }
 
-ul {
-	list-style: none;
-}
-
 .nav {
-	position: fixed;
-	top: 41px;
+	position: absolute;
+	top: 0;
 	left: 0;
 	height: 100%;
-	background: #555;
+	background: #666;
 	padding: 0;
 	margin: 0;
 	text-align: center;
+	z-index: 2;
+}
+
+.nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.nav ul:first-child {
+	margin-top: 35px;
 }
 
 .nav li {
@@ -60,16 +88,29 @@ ul {
 	background: #f00;
 }
 
-.nav li a.ui-link,
-.nav li a.ui-link:hover,
-.nav li a.ui-link:visited {
+.nav li a,
+.nav li a:hover,
+.nav li a:visited {
 	display: block;
 	color: #fff;
 	font-size: 1.231em;
 	text-decoration: none;
 	font-weight: bold;
-	padding: 5px 10px;
+	padding: 5px 8px;
 	text-shadow: none;
+	min-width: 18px;
+}
+
+.nav .building-title {
+	font-weight: bold;
+	color: #fff;
+	background: #444 url(../img/building.png) no-repeat center 1px;
+	padding: 22px 5px 3px 5px;
+}
+
+.nav-516,
+.nav-1414 {
+	display: none;
 }
 
 .ui-content {

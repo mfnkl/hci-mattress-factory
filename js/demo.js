@@ -8,7 +8,7 @@
   });
 
   function init() {
-    piece_list = $("#gallery");
+    piece_list = $("#scroller");
     piece_detail = $("#piece_detail");
     return GLOBAL.pieces;
   }
@@ -55,6 +55,8 @@
         html += '</ul></section>';
         piece_list.html(html);
     });
+
+  setScroll();
     
   }
 
@@ -88,12 +90,6 @@
 
 $(function() {
     pieces.init().get();
-
-    $('#navbar a').live("click",function(event) {
-      var $anchor = $(this);
-      $('body').animate({scrollTop: $($anchor.attr('href')).offset().top - 60}, 500);
-      event.preventDefault();
-    });
 });
 
 
