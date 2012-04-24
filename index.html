@@ -27,8 +27,16 @@
   				$('.building-title').bind('click',function(event){
   					var that = $(this);
     				var navItems = that.attr('data-to-show');
+    				var building = that.attr('data-building');
+    				
+    				$(".building.active").hide().removeClass('active');
+    				$("#building-"+building).show().addClass('active');
+    				myScroll.scrollToElement("#floor-1-"+building, 100);
+
     				$('.nav li[class!="building-title"]').slideUp();
     				$(navItems).slideDown();
+
+
   				});
 			}
 
@@ -44,22 +52,25 @@
 		<div id="header">
 			<img src="mflogo.png">
 		</div>
+		<div id="loading">
+			Loading...
+		</div>
 		<div class="container">
 			<div class="nav" id="navbar">
 				<ul>
-					<li class="building-title" data-to-show=".nav-500">500</li>
-					<li class="nav-500"><a data-link="#floor-4" class="scrollTo">4</a></li>
-					<li class="nav-500"><a data-link="#floor-3" class="scrollTo">3</a></li>
-					<li class="nav-500"><a data-link="#floor-2" class="scrollTo">2</a></li>
-					<li class="nav-500"><a data-link="#floor-1" class="scrollTo first">1</a></li>
-					<li class="nav-500"><a data-link="#floor-0" class="scrollTo">LL</a></li>
+					<li class="building-title" data-to-show=".nav-500" data-building="500">500</li>
+					<li class="nav-500"><a data-link="#floor-4-500" class="scrollTo">4</a></li>
+					<li class="nav-500"><a data-link="#floor-3-500" class="scrollTo">3</a></li>
+					<li class="nav-500"><a data-link="#floor-2-500" class="scrollTo">2</a></li>
+					<li class="nav-500"><a data-link="#floor-1-500" class="scrollTo first">1</a></li>
+					<li class="nav-500"><a data-link="#floor-0-500" class="scrollTo">LL</a></li>
 					
-					<li class="building-title" data-to-show=".nav-1414">1414</li>
+					<li class="building-title" data-to-show=".nav-1414" data-building="1414">1414</li>
 					<li class="nav-1414"><a data-link="#floor-3-1414" class="scrollTo">3</a></li>
 					<li class="nav-1414"><a data-link="#floor-2-1414" class="scrollTo">2</a></li>
 					<li class="nav-1414"><a data-link="#floor-1-1414" class="scrollTo first">1</a></li>
 					
-					<li class="building-title" data-to-show=".nav-516">516</li>
+					<li class="building-title" data-to-show=".nav-516" data-building="516">516</li>
 					<li class="nav-516"><a data-link="#floor-4-516" class="scrollTo">4</a></li>
 					<li class="nav-516"><a data-link="#floor-3-516" class="scrollTo">3</a></li>
 					<li class="nav-516"><a data-link="#floor-2-516" class="scrollTo">2</a></li>
@@ -68,11 +79,13 @@
 			</div>
 			<div id="wrapper">				
 				<div id="scroller" data-spy="scroll" data-target="#navbar">
-					<section class="floor" id="floor-4">
+
+					<div id="building-500" class="building active">
+					<section class="floor" id="floor-4-500">
 						<ul>
 							<li> 
 							  <a>
-								<img src="http://placehold.it/250x125" />
+								<img src="http://farm7.staticflickr.com/6031/6328889275_a690994507_m.jpg" />
 								<span class="overlay">	
 									<span class="artist">Than Htay Maung</span>
 									My Offering
@@ -81,7 +94,7 @@
 							</li>
 							<li> 
 							  <a>
-								<img src="http://placehold.it/250x125" />
+								<img src="http://farm7.staticflickr.com/6107/6328895947_44f20a5dca_m.jpg" />
 								<span class="overlay">	
 									<span class="artist">Pablo Valbuena</span>
 									Para-Site [mattress factory]
@@ -90,24 +103,24 @@
 							</li>
 						</ul>
 					</section>
-					<section class="floor" id="floor-3">
+					<section class="floor" id="floor-3-500">
 						<ul>
 							<li> 
 							  <a>
-								<img src="http://placehold.it/250x125" />
+								<img src="http://farm7.staticflickr.com/6222/6329636674_89da33d8a7_m.jpg" />
 								<span class="overlay">	
-									<span class="artist">Veronica Ryan</span>
-									The Weather Inside
+									<span class="artist">Nika Kupyrova</span>
+									Roadkill
 								</span>
 							  </a>
 							</li>
 						</ul>
 					</section>
-					<section class="floor" id="floor-2">
+					<section class="floor" id="floor-2-500">
 						<ul>
 							<li> 
 							  <a>
-								<img src="http://placehold.it/250x125" />
+								<img src="http://farm4.staticflickr.com/3327/3508407082_8cbc194296_m.jpg" />
 								<span class="overlay">	
 									<span class="artist">James Turrell</span>
 									Catso, Red (1967)
@@ -116,7 +129,7 @@
 							</li>
 						</ul>
 					</section>
-					<section class="floor" id="floor-1">
+					<section class="floor" id="floor-1-500">
 						<div class="welcome">
 							<h3> Welcome! Tap the <a data-link="#floor-4" class="scrollTo">4th floor</a> to begin your tour </h3>
 							<p class="description"> You can take the elevator or the stairs </p>
@@ -127,11 +140,11 @@
 							<p class="description">June 15th- Get ready for the Urban Garden Party "Alice At the Factory" </p>
 						</div>
 					</section>
-					<section class="floor" id="floor-0">
+					<section class="floor" id="floor-0-500">
 						<ul>
 							<li> 
 							  <a>
-								<img src="http://placehold.it/250x125" />
+								<img src="http://farm7.staticflickr.com/6045/6329170577_71d7b0eb2f_m.jpg" />
 								<span class="overlay">	
 									<span class="artist">Natalia Gonzalez</span>
 									Light Recordings
@@ -140,7 +153,57 @@
 							</li>
 						</ul>
 					</section>
-				</div>	
+					</div>
+
+					<div id="building-1414" class="building">
+					<section class="floor" id="floor-3-1414">
+						<ul>
+							<li> 
+							  <a>
+								<img src="http://farm6.staticflickr.com/5240/6941474918_c73df36bd1_m.jpg" />
+								<span class="overlay">	
+									<span class="artist">Transformazium</span>
+									Inside, Outside, Inside: walls are built
+								</span>
+							  </a>
+							</li>
+						</ul>
+					</section>
+					<section class="floor" id="floor-2-1414">
+						<ul>
+							<li> 
+							  <a>
+								<img src="http://farm8.staticflickr.com/7130/6941502950_4ee50006da_m.jpg" />
+								<span class="overlay">	
+									<span class="artist">Gill Wildman</span>
+									House says
+								</span>
+							  </a>
+							</li>
+						</ul>
+					</section>
+					<section class="floor" id="floor-1-1414">
+						<ul>
+							<li> 
+							  <a>
+								<img src="http://farm8.staticflickr.com/7185/6941527510_aa1df879a6_m.jpg" />
+								<span class="overlay">	
+									<span class="artist">Matt Huber</span>
+									[11&#176; x 7&#176; x 38&#176;]
+								</span>
+							  </a>
+							</li>
+						</ul>
+					</section>
+					</div>
+
+					<div id="building-516" class="building">
+					<section class="floor" id="floor-1-516">
+						<p>516 is currently under construction. Check back soon.</p>
+					</section>
+					</div>
+
+				</div>
 			</div>
 		</div>
 

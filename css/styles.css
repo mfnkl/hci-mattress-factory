@@ -20,41 +20,56 @@
 }
 
 /* Index page */
+div.building {
+	display: none;
+}
+
+div.building.active {
+	display: block;
+}
+
 .floor {
 	min-height: 400px;
 }
 
 .floor ul {
 	padding: 0;
-	margin: 0 0 0 5px;
+	margin: 0 0 0 15px;
+	list-style: none;
 }
 
-.floor li {
-	width: 250px;
-	height: 125px;
+.floor li a{
+	display: block;
+	width: 240px;
+	height: 140px;
 	font-size: .88em;
 	line-height: 1.5em;
 	letter-spacing: .05em;
-	margin-bottom: 30px;
-}
-
-.floor li a {
+	overflow: hidden;
+	margin: 15px 0;
 	text-decoration: none;
 	color: #fff;
 }
 
 .floor .overlay {
 	display: inline-block;
-	padding: 2%;
-	width: 96%;
+	padding: 5px;
+	width: 230px;
 	background: rgba(0,0,0,.7);
 	position: relative;
-	top: -45px;
+	top: -64px;
 }
 
 .floor .artist {
 	display: block;
 	text-transform: uppercase;
+}
+
+#building-516 p {
+	width: 250px;
+	font-size: 1.361em;
+	line-height: 1.4em;
+	padding: 40px 10px;
 }
 
 .nav {
@@ -111,6 +126,21 @@
 .nav-516,
 .nav-1414 {
 	display: none;
+}
+
+#loading {
+	background: rgba(0,0,0,.8);
+	color: #fff;
+	font-weight: bold;
+	text-align: center;
+	padding: 20px 0;
+	font-size: 18px;
+	width: 160px;
+	position: absolute;
+	top: 100px;
+	margin-left: 80px;
+	display: none;
+	z-index: 2000;
 }
 
 .ui-content {
