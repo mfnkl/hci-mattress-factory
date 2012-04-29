@@ -65,9 +65,9 @@
 			<div id="tag_tmpl">
 				Tags:
 				<br />
-				<% for (var key in tagCounts) { %>
-					<span data-id="<%=objectId%>"> <%=key%>(<%=tagCounts[key]%>) </span>
-				<% } %>
+				<div id="tags"><% for (var key in tagCounts) { %>
+					<span> <%=key%>(<%=tagCounts[key]%>) </span>
+				<% } %></div>
 				<br />		
 				<input type="text" id="new_tag" placeholder="Tag"  />
 			</div>	
