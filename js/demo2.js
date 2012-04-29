@@ -108,10 +108,10 @@
 			});
 		}
 		var newHTML = "";
-			for (var key in tagCounts) {
-				newHTML += "<span>"+key+"("+tagCounts[key]+")</span>"
-			}
-			document.getElementById("tags").innerHTML = newHTML;
+		for (var key in tagCounts) {
+			newHTML += "<span>"+key+"("+tagCounts[key]+")</span>"
+		}
+		document.getElementById("tags").innerHTML = newHTML;
 		
 	});
 	
