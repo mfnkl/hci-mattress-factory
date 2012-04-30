@@ -137,8 +137,22 @@ div.building.active {
 	padding: 15px 5px 15px 15px;
 }
 
+.welcome h3 {
+	line-height: 1.2em;
+	margin: 5px 0;
+}
+
+.welcome em {
+	display: block;
+	margin-bottom: 10px;
+}
+
 .welcome ul {
 	margin: 0;
+}
+
+.welcome date {
+	font-weight: bold;
 }
 
 #building-516 p {
