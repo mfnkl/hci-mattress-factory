@@ -1,22 +1,63 @@
+a {
+	color: #ed1f24;
+}
+
+input {
+	height: auto;
+}
+
+.label-important {
+	background-color: #ed1f24;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+} 
+
+.alert {
+	padding: 5px;
+}
+
 #header {
-	position:absolute; z-index:3;
+	position: absolute; z-index:3;
 	top:0; left:0;
-	width:100%;
-	line-height:45px;
+	width: 100%;
+	line-height: 45px;
 	background-color:#222;
-	padding:5px 0;
-	color:#eee;
-	font-size:20px;
-	text-align:center;
+	padding: 4px 0;
+	color: #eee;
+	text-align: center;
+}
+
+#header .btn {
+	font-weight: bold;
+}
+
+#header .map,
+#header .back {
+	float: left;
+	margin-left: 5px;
+}
+
+#header .back {
+	margin-right: -100%;
+}
+
+#header .info {
+	float: right;
+	margin-right: 5px;
 }
 
 #wrapper {	
 	position:absolute; z-index:1;
-	top: 35px;
-	left: 45px;
+	top: 0;
+	left: 0;
 	height: 100%;
 	width:100%;
 	overflow:auto;
+}
+
+.index #scroller {
+	background: url("../img/white_brick_wall.png");
 }
 
 /* Index page */
@@ -30,11 +71,12 @@ div.building.active {
 
 .floor {
 	min-height: 400px;
+	padding-top: 10px;
 }
 
 .floor ul {
 	padding: 0;
-	margin: 0 0 0 15px;
+	margin: 0 0 0 60px;
 	list-style: none;
 }
 
@@ -60,9 +102,43 @@ div.building.active {
 	top: -64px;
 }
 
+.floor .overlay i {
+	float: right;
+	margin-top: 10px;
+}
+
 .floor .artist {
 	display: block;
 	text-transform: uppercase;
+}
+
+#floor-1-500 {
+	padding-top: 35px;
+}
+
+#floor-1-500 {
+	background: url(../img/background.gif) no-repeat;
+	background-size: cover;
+}
+
+#floor-1-516 {
+	background: url(http://farm7.static.flickr.com/6040/6306058579_ffef6e6f0e_z.jpg) no-repeat right center;
+	background-size: cover;
+}
+
+.welcome {
+	background: rgba(255,255,255,.93);
+	-moz-box-shadow: 0 0 15px rgba(0,0,0,.26);
+	-webkit-box-shadow: 0 0 15px rgba(0,0,0,.26);
+	box-shadow: 0 0 15px rgba(0,0,0,.26);
+	width: 230px;
+	float: right;
+	margin-top: 45px;
+	padding: 15px 5px 15px 15px;
+}
+
+.welcome ul {
+	margin: 0;
 }
 
 #building-516 p {
@@ -100,7 +176,7 @@ div.building.active {
 }
 
 .nav li.active {
-	background: #f00;
+	background: #ed1f24;
 }
 
 .nav li a,
@@ -143,100 +219,66 @@ div.building.active {
 	z-index: 2000;
 }
 
-.ui-content {
-	padding-left: 55px;
+.content,
+.tag-area {
+	padding: 10px;
 }
 
-#mappage{
-margin-left:-40px;	
+.basic-info {
+	overflow: auto;
 }
 
-
-
-#content{
-	background-color: #fff;
-	padding-left: 10px;
-	padding-right: 10px;
-	padding-top: 10px;
-	padding-bottom: 90px;
-}
-
-
-#description{
-	padding:10px;
-	padding-top: 25px;
+.basic-info p {
 	float: left;
-	position: relative;
+	width: 220px;
 }
 
-#status{
-	margin: 10px;
-	margin-top: 25px;
-	color:#fff;
-	background-color:#ff0000;
-	padding: 5px;
-	width: 80px;
-	text-align: center;
+.basic-info .label {
 	float: right;
-	position: relative;
-	font-weight: lighter;
+	margin-right: 0;
 }
 
-#infolink{
-	margin: 10px;
-	color: #aaa;
+.basic-info a {
+	float: right;
+	display: inline-block;
+	margin-top: 20px;
+}
+
+.tag-1,
+.tag-2,
+.tag-3,
+.tag-4 {
 	text-decoration: underline;
-	position: relative;
-	float: right;
-	margin-top: -16px;
+	color: #ed1f24;
+	font-size: 1.08em;
+	vertical-align: middle;
+	display: inline-block;
+	margin: 4px;
+	text-transform: lowercase;
 }
-#tips{
-	border: 1px solid #ccb396;
-	margin:10px;
-	padding:5px;
-	margin-bottom: 20px;
-	font-style:italic;
-	background-color: #f9e7d3;
-}
-#tags{
-	border-top: 1px solid #a1a1a1;
-	background-color:#eaeaea;
-	padding: 20px;
-	margin:-10px;
-}
-#tagbutton{
-	font-size: 20px;
-	border: 1px solid #000;
-	background-image: url('tagpic.png');
-	background-position: left;
-	background-repeat: no-repeat;
-	background-position: 70px center;
-	background-color: #c5c5c5;
-	border-radius: 0px;	
-}
-div.imageSub { 
-	position: relative; 
-	margin: -10px;
-	}
-div.imageSub img { 
-	z-index: 1; 
-	}
-div.imageSub div{
-  position: absolute;
-  bottom: 0;
-  padding: 5px
-  margin: 15px;
-  text-align: left;
-  overflow: hidden;
-}
-div.imageSub div.blackbg {
-  z-index: 2;
-  background-color: #000;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-  filter: alpha(opacity=50);
-  opacity: 0.5;
-}
-div.imageSub div.label {
-	z-index: 3;
 
+.tag-2 {
+	font-size: 1.361em;
+}
+
+.tag-3 {
+	font-size: 1.861em;
+}
+
+.tag-4 {
+	font-size: 2.321em;
+}
+
+.tag-area {
+	background: #f1f1f1;
+	border: 1px solid #ddd;
+	border-width: 1px 0;
+}
+
+.tag-area form {
+	margin: 10px 0;
+}
+
+.tag-area input {
+	width: 200px;
 }
