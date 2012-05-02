@@ -36,6 +36,17 @@
 
 			
 		</script>
+		
+		<script type="text/javascript">
+			var objURL = new Object();
+			window.location.search.replace(
+			new RegExp( "([^?=&]+)(=([^&]*))?", "g" ),
+				function( $0, $1, $2, $3 ){
+					objURL[ $1 ] = $3;
+				}
+			);
+ 
+		</script>
 	</head>
 	<body>
 		<div id="header">
@@ -48,45 +59,51 @@
 		<div class="container">
 			<div id="wrapper">				
 				<div id="scroller" data-spy="scroll" data-target="#navbar">
-					<img src="http://farm7.staticflickr.com/6107/6328895947_44f20a5dca_n.jpg" />
-					<div class="content">	
-						<div class="basic-info">	
-							<p>
-								PABLO VALBUENA <br />
-								Para-Site [mattress factory], 2011<br />
-								video projection on architecture
-							</p>
-							<span class="label label-important">Temporary</span>
-							<a class="more-info">More Info >></a>
-						</div>
-						<div class="alert">
-							<strong>Tip:</strong> Watch entire sequence. No photos or video.
-						</div>				
-					</div>
-					<div class="tag-area">
-						<p class="tag-cloud">
-							<span class="tag-1">cool</span>
-							<span class="tag-4">favorite</span>
-							<span class="tag-2">interesting</span>
-							<span class="tag-1">illusion</span>
-							<span class="tag-3">dark</span>
-							<span class="tag-2">abstract</span>
-							<span class="tag-4">amazing</span>
-							<span class="tag-2">monochrome</span>
-						</p>
-						<form class="form-inline">
-							<input id="tag-field" class="input-medium" type="text" placeholder="What do you think?" />
-							<button type="submit" id="tag-button" class="btn"><i class="icon-tag"></i> Add Tag</button>
-						</form>
-					</div>
+					
+				
 				</div>
 			</div>
 		</div>
+		
+		<script type="text/html"  id="piece_tmpl">
+			<img src="<%=imageUrl%>" />
+			<div class="content">
+				<div class="basic-info">	
+					<div style="text-transform:uppercase"><%=artist%></div>
+					<i><%=title%></i>, <%=year%> <br />
+					<%=description%>
+							
+					<span class="label label-important"> <%=status%> </span>
+					<a class="more-info">More Info >></a>
+						
+					<div class="alert">
+						<strong>Tip:</strong> <%=tips%>
+					</div>	
+				</div>
+			</div>
+	
+			<div class="tag-area" id="tag_tmpl">
+				<div id="tags">
+					<% for (var key in tagCounts) { %>
+							<span class="tag-1"> <%=key%>(<%=tagCounts[key]%>) </span>
+					<% } %>
+				</div>
+				<br />	
+				
+				<form class="form-inline">
+					<input id="tag-field" class="input-medium" type="text" placeholder="What do you think?" />
+					<button type="submit" id="tag-button" class="btn"><i class="icon-tag"></i> Add Tag</button>
+				</form>
+				
+			
+				
+			</div>	
+		</script>
 
 		
-		<!-- <script type="application/javascript" src = "js/jquery.parse.js"></script>
+		<script type="application/javascript" src = "js/jquery.parse.js"></script>
 		<script type="application/javascript" src="js/tmpl.js"></script>
-		<script type="application/javascript" src="js/demo.js"></script> -->
+		<script type="application/javascript" src="js/detail.js"></script>
 		<script type="application/javascript" src="js/bootstrap.min.js"></script>
 	</body>
 </html>
