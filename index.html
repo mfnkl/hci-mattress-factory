@@ -5,6 +5,34 @@
 
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0-rc.1/jquery.mobile-1.1.0-rc.1.min.css" />
 		<link rel="stylesheet" href="css/styles.css" />
+		
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.1.0-rc.1/jquery.mobile-1.1.0-rc.1.min.js"></script>
+		<script src="js/jquery.parse.js"></script>
+	
+		<style type="text/css">
+		.ui-page {
+		    background: url(imgs/lobby.jpg) no-repeat;
+			background-size: 100%;  
+		}
+		
+		.welcome{
+			margin:auto;
+			margin-top:100px;
+			width:500px;
+			height:400px;
+			padding:10px;
+			background-color:rgba(255,255,255,0.9)
+			
+		}
+		
+		.description{
+			font-size:13px;
+		}
+	
+		}
+		</style>
+	
 	</head>
 	<body>
 		<div data-role="page" id="index">
@@ -85,12 +113,18 @@
 
 		<script type="text/html" id="piece_tmpl">
 			<li data-id="<%= objectId %>"> 
+<<<<<<< HEAD
 				<a href="#details" data-transition="slide">
 					<img src="http://placehold.it/250x125" />
 					<span class="overlay">	
 						<span class="artist"><%= artist%></span>
 						<%=title%>
 					</span>
+=======
+				<a href="detail.html?i=<%=objectId%>" rel="external" data-transition="slide">
+					<%=title%> 
+					<span style="color:red;"><%= artist%></span>
+>>>>>>> 9c718f715d865a1a8d48c7c53082e30fad3375ed
 				</a>
 			</li>
 		</script>

@@ -14,6 +14,17 @@
 		</script>
 		<link href="styles.css" rel="stylesheet" type="text/css" media="screen" />
 		<style type="text/css"></style>
+		
+		<script type="text/javascript">
+			var objURL = new Object();
+			window.location.search.replace(
+			new RegExp( "([^?=&]+)(=([^&]*))?", "g" ),
+				function( $0, $1, $2, $3 ){
+					objURL[ $1 ] = $3;
+				}
+			);
+ 
+		</script>
 	</head>
 	<body>
 		<div data-role="page">
@@ -25,37 +36,47 @@
 			</div><!-- /header -->
 
 			<div id="content">
-				<div class="imageSub">
-					<img src="http://www.mattress.org/media/MattressFactory_pablovalbue.jpg" />
-					<div class="blackbg"></div>
-					<div class="label"><a name="fb_share" type="icon" share_url="http://farm7.staticflickr.com/6117/6329646852_3aa7a84a86_o.jpg"></a> </div>
-					</div><!--pictures-->
-					
-					<div id="status">
-						temporary
-					</div>
-					<div id="description">
-						PABLO VALBUENA <br />
-						Para-Site [mattress factory], 2011<br />
-						video projection on architecture
-					</div>
-					<br /><br /><br /><br />
-					<div id="infolink">
-						More Info >>
-					</div>
-					<br />
-					<div id="tips">
-						Tip: Watch entire sequence. Please no photography or video.
-					</div>
-					<div id="tags">
-						tags go here
-						<div id="tagbutton" data-role="button">What do you think?</div>
-						</div>	
-					
 						
 			</div><!-- /content -->
 	
 		</div><!-- /page -->
-
+		
+		<script type="text/html"  id="piece_tmpl">
+			<div class="imageSub">
+				<img src="<%=imageUrl%>" />
+				<div class="blackbg"></div>
+				<div class="label"><a name="fb_share" type="icon" share_url="http://farm7.staticflickr.com/6117/6329646852_3aa7a84a86_o.jpg"></a> </div>
+			</div><!--pictures-->
+					
+			<div id="status">
+				<%=status%>
+			</div>
+			<div id="description">
+				<div style="text-transform:uppercase"><%=artist%></div>
+				<i><%=title%></i>, <%=year%> <br />
+				<%=description%>
+			</div>
+			<br /><br /><br /><br />
+			<div id="infolink">
+				<a href="#">More Info >></a>
+			</div>
+			<br />
+			<div id="tips">
+				<%=tips%>
+			</div>
+			<div id="tag_tmpl">
+				Tags:
+				<br />
+				<div id="tags"><% for (var key in tagCounts) { %>
+					<span> <%=key%>(<%=tagCounts[key]%>) </span>
+				<% } %></div>
+				<br />		
+				<input type="text" id="new_tag" placeholder="Tag"  />
+			</div>	
+		</script>
+		
+		<script src="js/tmpl.js"></script>
+		<script src="js/demo2.js"></script>
+		
 	</body>
 </html>

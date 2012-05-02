@@ -81,7 +81,6 @@ margin-left:-40px;
 }
 
 
-
 #content{
 	background-color: #fff;
 	padding-left: 10px;
@@ -127,7 +126,7 @@ margin-left:-40px;
 	font-style:italic;
 	background-color: #f9e7d3;
 }
-#tags{
+#tag_tmpl{
 	border-top: 1px solid #a1a1a1;
 	background-color:#eaeaea;
 	padding: 20px;
