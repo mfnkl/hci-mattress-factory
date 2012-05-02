@@ -84,151 +84,50 @@
 			<div id="wrapper">				
 				<div id="scroller" data-spy="scroll" data-target="#navbar">
 
-					<div id="building-500" class="building active">
-					<section class="floor" id="floor-4-500">
-						<ul>
-							<li> 
-							  <a href="detail.html">
-								<img src="http://farm7.staticflickr.com/6031/6328889275_a690994507_m.jpg" />
-								<span class="overlay">
-									<i class="icon-chevron-right icon-white"></i>	
-									<span class="artist">Than Htay Maung</span>
-									My Offering
-								</span>
-							  </a>
-							</li>
-							<li> 
-							  <a href="detail.html">
-								<img src="http://farm7.staticflickr.com/6107/6328895947_44f20a5dca_m.jpg" />
-								<span class="overlay">	
-									<i class="icon-chevron-right icon-white"></i>
-									<span class="artist">Pablo Valbuena</span>
-									Para-Site [mattress factory]
-								</span>
-							  </a>
-							</li>
-						</ul>
-					</section>
-					<section class="floor" id="floor-3-500">
-						<ul>
-							<li> 
-							  <a href="detail.html">
-								<img src="http://farm7.staticflickr.com/6222/6329636674_89da33d8a7_m.jpg" />
-								<span class="overlay">	
-									<i class="icon-chevron-right icon-white"></i>
-									<span class="artist">Nika Kupyrova</span>
-									Roadkill
-								</span>
-							  </a>
-							</li>
-						</ul>
-					</section>
-					<section class="floor" id="floor-2-500">
-						<ul>
-							<li> 
-							  <a href="detail.html">
-								<img src="http://farm4.staticflickr.com/3327/3508407082_8cbc194296_m.jpg" />
-								<span class="overlay">	
-									<i class="icon-chevron-right icon-white"></i>
-									<span class="artist">James Turrell</span>
-									Catso, Red (1967)
-								</span>
-							  </a>
-							</li>
-						</ul>
-					</section>
-					<section class="floor" id="floor-1-500">
-						<div class="welcome">
-							<h4>Welcome!</h4>
-							<h3>To begin your tour, please tap the <a data-link="#floor-4-500" class="scrollTo">4th floor</a></h3>
-							<em>You can take the elevator or the stairs.</em>
-							<p><i class="icon-gift"></i> Visit our gift shop on this floor</p>
-							<h4>Announcements:</h4>		
-							<ul class="announcements">
-								<li>
-									<date>June 15th</date> - 
-									Get ready for the Urban Garden Party &#147;Alice At the Factory&#148;
-								</li>
-							</ul>
-						</div>
-					</section>
-					<section class="floor" id="floor-0-500">
-						<ul>
-							<li> 
-							  <a href="detail.html">
-								<img src="http://farm7.staticflickr.com/6045/6329170577_71d7b0eb2f_m.jpg" />
-								<span class="overlay">	
-									<i class="icon-chevron-right icon-white"></i>
-									<span class="artist">Natalia Gonzalez</span>
-									Light Recordings
-								</span>
-							  </a>
-							</li>
-						</ul>
-					</section>
-					</div>
-
-					<div id="building-1414" class="building">
-					<section class="floor" id="floor-3-1414">
-						<ul>
-							<li> 
-							  <a href="detail.html">
-								<img src="http://farm6.staticflickr.com/5240/6941474918_c73df36bd1_m.jpg" />
-								<span class="overlay">	
-									<i class="icon-chevron-right icon-white"></i>
-									<span class="artist">Transformazium</span>
-									Inside, Outside, Inside: walls are built
-								</span>
-							  </a>
-							</li>
-						</ul>
-					</section>
-					<section class="floor" id="floor-2-1414">
-						<ul>
-							<li> 
-							  <a href="detail.html">
-								<img src="http://farm8.staticflickr.com/7130/6941502950_4ee50006da_m.jpg" />
-								<span class="overlay">	
-									<i class="icon-chevron-right icon-white"></i>
-									<span class="artist">Gill Wildman</span>
-									House says
-								</span>
-							  </a>
-							</li>
-						</ul>
-					</section>
-					<section class="floor" id="floor-1-1414">
-						<ul>
-							<li> 
-							  <a>
-								<img src="http://farm8.staticflickr.com/7185/6941527510_aa1df879a6_m.jpg" />
-								<span class="overlay">	
-									<i class="icon-chevron-right icon-white"></i>
-									<span class="artist">Matt Huber</span>
-									[11&#176; x 7&#176; x 38&#176;]
-								</span>
-							  </a>
-							</li>
-						</ul>
-					</section>
-					</div>
-
-					<div id="building-516" class="building">
-					<section class="floor" id="floor-1-516">
-						<div class="welcome">
-							<h3>516 is currently under construction. Please, check back soon.</h3>
-						</div>
-					</section>
-					</div>
 
 				</div>
 			</div>
 		</div>
+		
+		<script type="text/html"  id="piece_tmpl">
+			<li> 
+				<a href="detail.html?i=<%=objectId%>">
+					<img src="<%=imageUrlSmall%>" />
+					<span class="overlay">
+						<i class="icon-chevron-right icon-white"></i>
+						<span class="artist"> <%= artist %> </span>
+						<%= title %>
+					</span>	
+				</a>
+			</li>
+		</script>
+		
+		<script type="text/html" id="500_welcome_message">
+			<div class="welcome">
+				<h4>Welcome!</h4>
+				<h3>To begin your tour, please tap the <a data-link="#floor-4-500" class="scrollTo">4th floor</a></h3>
+				<em>You can take the elevator or the stairs.</em>
+				<p><i class="icon-gift"></i> Visit our gift shop on this floor</p>
+				<h4>Announcements:</h4>		
+				<ul class="announcements">
+					<li>
+						<date>June 15th</date> - 
+						Get ready for the Urban Garden Party &#147;Alice At the Factory&#148;
+					</li>
+				</ul>
+			</div>
+		</script>
+		
+		<script type="text/html" id="516_welcome_message">
+			<div class="welcome">
+				<h3>516 is currently under construction. Please, check back soon.</h3>
+			</div>
+		</script>
 
 		
-		<!-- <script type="application/javascript" src = "js/jquery.parse.js"></script>
+		<script type="application/javascript" src = "js/jquery.parse.js"></script>
 		<script type="application/javascript" src="js/tmpl.js"></script>
-		<script type="application/javascript" src="js/demo.js"></script> -->
+		<script type="application/javascript" src="js/pieces.js"></script>
 		<script type="application/javascript" src="js/scroll.js"></script>
 		<script type="application/javascript" src="js/bootstrap.min.js"></script>
 		<script>
