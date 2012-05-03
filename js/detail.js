@@ -108,10 +108,10 @@
 		}
 		var newHTML = "";
 		for (var key in tagCounts) {
-			newHTML += '<span class="tag-1">'+key+"("+tagCounts[key]+")</span>"
+			newHTML += '<span class="tag tag-'+tagCounts[key]+'">'+key+'</span>'
 		}
 		document.getElementById("tags").innerHTML = newHTML;
-		
+		myScroll.refresh();
 	});
 	
   }
@@ -143,16 +143,16 @@
         });
         content.html(html);
 		
-		console.log(content.html(html));
+		myScroll.refresh();
     });
     
     
   }
 
-	GLOBAL.pieces = {
-		init: init,
-		get: get
-	};
+  GLOBAL.pieces = {
+	init: init,
+	get: get
+  };
 
 })(window, jQuery, tmpl);
 

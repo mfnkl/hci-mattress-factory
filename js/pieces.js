@@ -90,9 +90,9 @@
 		html += html1414;
 		html += html516;
 		piece_list.html(html);
+    
+    	myScroll.refresh();
     });
-
-  setScroll();
     
   }
 

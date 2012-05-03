@@ -1,3 +1,5 @@
+/* 
+** General tags + bootstrap overrides */
 a {
 	color: #ed1f24;
 }
@@ -17,6 +19,8 @@ input {
 	padding: 5px;
 }
 
+/* 
+** Header */
 #header {
 	position: absolute; z-index:3;
 	top:0; left:0;
@@ -56,11 +60,13 @@ input {
 	overflow:auto;
 }
 
+/* 
+** Main index -- pieces list */
+
 .index #scroller {
 	background: url("../img/white_brick_wall.png");
 }
 
-/* Index page */
 div.building {
 	display: none;
 }
@@ -162,6 +168,9 @@ div.building.active {
 	padding: 40px 10px;
 }
 
+
+/* 
+** Main index -- navigation sidebar */
 .nav {
 	position: absolute;
 	top: 0;
@@ -218,33 +227,32 @@ div.building.active {
 	display: none;
 }
 
-#loading {
-	background: rgba(0,0,0,.8);
-	color: #fff;
-	font-weight: bold;
-	text-align: center;
-	padding: 20px 0;
-	font-size: 18px;
-	width: 160px;
-	position: absolute;
-	top: 100px;
-	margin-left: 80px;
-	display: none;
-	z-index: 2000;
-}
+
+/* 
+** Details page */
 
 .content,
 .tag-area {
 	padding: 10px;
 }
 
-.basic-info {
-	overflow: auto;
+.detail img {
+	width: 100%;
 }
 
-.basic-info p {
+.basic-info {
+	overflow: auto;
+	margin-bottom: 10px;
+}
+
+.basic-info ul {
 	float: left;
 	width: 220px;
+	margin: 0;
+}
+
+.basic-info .artist {
+	text-transform: uppercase;
 }
 
 .basic-info .label {
@@ -258,28 +266,29 @@ div.building.active {
 	margin-top: 20px;
 }
 
-.tag-1,
-.tag-2,
-.tag-3,
-.tag-4 {
+.tag {
 	text-decoration: underline;
 	color: #ed1f24;
-	font-size: 1.08em;
+	font-size: 2.8em;
 	vertical-align: middle;
 	display: inline-block;
 	margin: 4px;
 	text-transform: lowercase;
 }
 
-.tag-2 {
+.tag.tag-1 {
+	font-size: 1.08em;
+}
+
+.tag.tag-2 {
 	font-size: 1.361em;
 }
 
-.tag-3 {
+.tag.tag-3 {
 	font-size: 1.861em;
 }
 
-.tag-4 {
+.tag.tag-4 {
 	font-size: 2.321em;
 }
 

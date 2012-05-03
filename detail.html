@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="css/styles.css" />
 
 		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-		<script type="text/javascript" src="js/iscroll.js"></script>
+		<script type="text/javascript" src="js/vendor/iscroll.js"></script>
 		<script type="text/javascript">
 			var myScroll;
 			function loaded() {
@@ -53,57 +53,54 @@
 			<a class="btn btn-inverse btn-small back" href="index.html"><i class="icon-chevron-left icon-white"></i> Back</a>
 			<img src="img/mflogo.png">
 		</div>
-		<div id="loading">
-			Loading...
-		</div>
 		<div class="container">
 			<div id="wrapper">				
-				<div id="scroller" data-spy="scroll" data-target="#navbar">
+				<div id="scroller" class="detail">
 					
 				
 				</div>
 			</div>
 		</div>
 		
-		<script type="text/html"  id="piece_tmpl">
-			<img src="<%=imageUrl%>" />
+		<script type="text/html" id="piece_tmpl">
+			<img src="<%= imageUrl %>" />
 			<div class="content">
 				<div class="basic-info">	
-					<div style="text-transform:uppercase"><%=artist%></div>
-					<i><%=title%></i>, <%=year%> <br />
-					<%=description%>
-							
+					<ul>
+						<li class="artist"><%= artist %></li>
+						<li class="title"><em><%= title %></em>, <%=year%></li>
+						<li><%= description %></li> 
+					</ul>	
 					<span class="label label-important"> <%=status%> </span>
 					<a class="more-info">More Info >></a>
-						
-					<div class="alert">
-						<strong>Tip:</strong> <%=tips%>
-					</div>	
 				</div>
+
+				<div class="alert">
+					<strong>Tip:</strong> <%=tips%>
+				</div>	
+				
 			</div>
-	
-			<div class="tag-area" id="tag_tmpl">
+
+			<div class="tag-area">
 				<div id="tags">
 					<% for (var key in tagCounts) { %>
-							<span class="tag-1"> <%=key%>(<%=tagCounts[key]%>) </span>
+						<span class="tag tag-<%=tagCounts[key]%>"> <%=key%> </span>
 					<% } %>
 				</div>
-				<br />	
-				
+
 				<form class="form-inline">
 					<input id="tag-field" class="input-medium" type="text" placeholder="What do you think?" />
 					<button type="submit" id="tag-button" class="btn"><i class="icon-tag"></i> Add Tag</button>
 				</form>
-				
-			
-				
 			</div>	
 		</script>
 
 		
-		<script type="application/javascript" src = "js/jquery.parse.js"></script>
-		<script type="application/javascript" src="js/tmpl.js"></script>
+		<script type="application/javascript" src = "js/vendor/jquery.parse.js"></script>
+		<script type="application/javascript" src="js/vendor/tmpl.js"></script>
+		<script type="application/javascript" src="js/vendor/bootstrap.min.js"></script>
+
+		
 		<script type="application/javascript" src="js/detail.js"></script>
-		<script type="application/javascript" src="js/bootstrap.min.js"></script>
 	</body>
 </html>

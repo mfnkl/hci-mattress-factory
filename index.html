@@ -5,51 +5,6 @@
 
 		<link rel="stylesheet" href="css/bootstrap.min.css" />
 		<link rel="stylesheet" href="css/styles.css" />
-
-		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-		<script type="text/javascript" src="js/iscroll.js"></script>
-		<script type="text/javascript">
-			var myScroll;
-			function loaded() {
-				myScroll = new iScroll('wrapper');
-				myScroll.scrollToElement('#floor-1-500', 800);
-				$('a.first').parent().addClass('active');
-				
-				$('a.scrollTo').bind('click',function(event){
-					var that = $(this);
-    				var element = that.attr('data-link');
-    				$('.nav li').removeClass('active');
-    				$('.nav a[data-link="'+element+'"]').parent().addClass('active');
-
-    				myScroll.scrollToElement(element, 800);
-  				});
-
-  				$('.building-title').bind('click',function(event){
-  					var that = $(this);
-    				var navItems = that.attr('data-to-show');
-    				var building = that.attr('data-building');
-    				
-    				$(".building.active").hide().removeClass('active');
-    				$("#building-"+building).show().addClass('active');
-    				myScroll.scrollToElement("#floor-1-"+building, 100);
-
-    				$('.nav li').removeClass('active');
-    				$('a.first').parent().addClass('active');
-
-    				$('.nav li[class!="building-title"]').slideUp();
-    				$(navItems).slideDown();
-
-
-  				});
-			}
-
-			document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
-
-			/* Use this for high compatibility (iDevice + Android)*/
-			document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 200); }, false);
-
-			
-		</script>
 	</head>
 	<body class="index">
 		<div id="header">
@@ -125,13 +80,13 @@
 		</script>
 
 		
-		<script type="application/javascript" src = "js/jquery.parse.js"></script>
-		<script type="application/javascript" src="js/tmpl.js"></script>
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script type="text/javascript" src="js/vendor/iscroll.js"></script>
+		<script type="application/javascript" src = "js/vendor/jquery.parse.js"></script>
+		<script type="application/javascript" src="js/vendor/tmpl.js"></script>
+		<script type="application/javascript" src="js/vendor/bootstrap.min.js"></script>
+		
+		<script type="text/javascript" src="js/script.js"></script>
 		<script type="application/javascript" src="js/pieces.js"></script>
-		<script type="application/javascript" src="js/scroll.js"></script>
-		<script type="application/javascript" src="js/bootstrap.min.js"></script>
-		<script>
-	    	$("#navbar").scrollspy();
-	    </script>
 	</body>
 </html>
