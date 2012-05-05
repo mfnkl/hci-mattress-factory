@@ -4,6 +4,10 @@ a {
 	color: #ed1f24;
 }
 
+ul {
+	list-style: none;
+}
+
 input {
 	height: auto;
 }
@@ -83,7 +87,6 @@ div.building.active {
 .floor ul {
 	padding: 0;
 	margin: 0 0 0 60px;
-	list-style: none;
 }
 
 .floor li a{
@@ -303,5 +306,22 @@ div.building.active {
 }
 
 .tag-area input {
+	width: 200px;
+}
+
+/* info & map */
+.content.info {
+	padding-top: 40px;
+}
+
+.info ul {
+	margin-left: 0;
+}
+
+.info li ul {
+	margin-left: 10px;
+}
+
+img.hours {
 	width: 200px;
 }
