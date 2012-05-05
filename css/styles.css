@@ -325,3 +325,29 @@ div.building.active {
 img.hours {
 	width: 200px;
 }
+
+.content.map {
+	padding: 40px 0 0 0;
+}
+
+.map img {
+	width: 100%;
+}
+
+.map .floor-view {
+	padding: 10px;
+	display: none;
+}
+
+.map .floor-view img {
+	width: 85%;
+}
+
+.map .floor-view h1 {
+	margin: 0;
+	display: inline-block;
+}
+
+.map .floor-view li {
+	margin: 10px 0;
+}
