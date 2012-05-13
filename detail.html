@@ -74,10 +74,12 @@
 					<span class="label label-important"> <%=status%> </span>
 					<a class="more-info">More Info >></a>
 				</div>
-
-				<div class="alert">
-					<strong>Tip:</strong> <%=tips%>
-				</div>	
+				
+				<% if (tips !== "") { %>
+					<div class="alert">
+						<strong>Tip:</strong> <%=tips%>
+					</div>
+				<% } %>
 				
 			</div>
 
