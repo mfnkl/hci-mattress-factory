@@ -351,3 +351,20 @@ img.hours {
 .map .floor-view li {
 	margin: 10px 0;
 }
+
+
+/* Tag page */
+.tag-list ul {
+	margin: 0;
+}
+
+.tag-list li a{
+	margin-left: auto;
+    margin-right: auto;
+}
+
+.tag-title h3 {
+	padding-top: 35px;
+	padding-left: 10px;
+	line-height: 1.2em;
+}

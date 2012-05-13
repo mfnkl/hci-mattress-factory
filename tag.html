@@ -1,0 +1,59 @@
+<html>
+	<head>
+		<title>Mattress Factory</title>
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=0;" /> 
+
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/styles.css" />
+		<script type="text/javascript">
+			var objURL = new Object();
+			window.location.search.replace(
+			new RegExp( "([^?=&]+)(=([^&]*))?", "g" ),
+				function( $0, $1, $2, $3 ){
+					objURL[ $1 ] = $3;
+				}
+			);
+ 
+		</script>
+	</head>
+	<body class="index">
+		<div id="header">
+			<a class="btn btn-inverse btn-small back" href="index.html"><i class="icon-chevron-left icon-white"></i> Back</a>
+			<img src="img/mflogo.png" />
+			<a class="btn btn-inverse btn-small info" href="info.html"><i class="icon-info-sign icon-white"></i> Info</a>
+		</div>
+		<div id="loading">
+			Loading...
+		</div>
+		<div class="container">
+			<div id="wrapper">				
+				<div id="scroller" data-spy="scroll" data-target="#navbar" class="floor tag-list">
+
+
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/html"  id="piece_tmpl">
+			<li> 
+				<a href="detail.html?i=<%=objectId%>">
+					<img src="<%=imageUrlSmall%>" />
+					<span class="overlay">
+						<i class="icon-chevron-right icon-white"></i>
+						<span class="artist"> <%= artist %> </span>
+						<%= title %>
+					</span>	
+				</a>
+			</li>
+		</script>
+		
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script type="text/javascript" src="js/vendor/iscroll.js"></script>
+		<script type="application/javascript" src = "js/vendor/jquery.parse.js"></script>
+		<script type="application/javascript" src="js/vendor/tmpl.js"></script>
+		<script type="application/javascript" src="js/vendor/bootstrap.min.js"></script>
+		
+		<script type="text/javascript" src="js/script.js"></script>
+		<script type="application/javascript" src="js/tags.js"></script>
+	</body>
+</html>

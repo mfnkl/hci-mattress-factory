@@ -84,7 +84,9 @@
 			<div class="tag-area">
 				<div id="tags">
 					<% for (var key in tagCounts) { %>
-						<span class="tag tag-<%=tagCounts[key]%>"> <%=key%> </span>
+						<a href="tag.html?i=<%=tagCounts[key][1]%>">
+							<span class="tag tag-<%=tagCounts[key][0]%>"> <%=key%> </span>
+						</a>
 					<% } %>
 				</div>
 
