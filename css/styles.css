@@ -213,7 +213,7 @@ div.building.active {
 	font-size: 1.231em;
 	text-decoration: none;
 	font-weight: bold;
-	padding: 5px 8px;
+	padding: 3px 8px;
 	text-shadow: none;
 	min-width: 18px;
 }
@@ -228,6 +228,15 @@ div.building.active {
 .nav-516,
 .nav-1414 {
 	display: none;
+}
+
+.icon-restroom {
+	width: 16px;
+	height: 16px;
+	background: url(../img/restroom.png) no-repeat;
+	background-size: contain;
+	display: block;
+	margin: 2px 0 0 3px;
 }
 
 
