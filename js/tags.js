@@ -23,8 +23,8 @@
         $.parse.get('pieces', {where : { 'objectId':{'$in':pieceList} }}, function(json) {
           var results2, html;
           
-          html += '<h3>Tag: '+ results[0].tagName+'</h3>';
-          html = '<ul>';
+          html = '<h3>Tag: '+ results[0].tagName+'</h3>';
+          html += '<ul>';
 
           results2 = json.results;
 
