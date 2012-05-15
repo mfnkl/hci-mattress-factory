@@ -1,0 +1,162 @@
+<html>
+	<head>
+		<title>Mattress Factory</title>
+
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<style>
+			img { max-width: 100%; }
+			#logo { width: 90%; margin-top: 8px; }
+			.team {
+				margin: 40px 0;
+				list-style: none;
+				font-weight: bold;
+			}
+			.span7 h3 {
+				margin: 30px 0 10px 0;
+			}
+			.row {
+				padding: 20px 0;
+			}
+			footer { 
+				background: #fafafa;
+				border-top: 1px solid #eee;
+				padding: 20px 0;
+				font-size: .93em;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">	
+				<div class="span3 offset1">
+					<img id="logo" src="img/report/logo-large.jpg" />
+					<h3>Mattress Factory Project</h3>
+
+					<ul class="team">
+						<li>Nicole Ifill</li>
+						<li>Michelle Lee</li>
+						<li>Angela Mao</li>
+						<li>Molly Samuels</li>
+					</ul>
+				</div>
+				<div class="span7">
+					<h2>Final Report</h2>
+					<p>Our original goal for this project was to design a solution that would improve wayfinding throughout the Mattress Factory and to enhance visitor experience by presenting more information about the pieces and how to interact with them.</p>
+					<p>This report describes are final user testing sessions and provides documentation for client maintenance of the application</p>
+
+					<h3>User testing</h3>
+
+					<h4>April 24, 2012</h4>
+					<p>We tested the new expandable navigation to see if users could figure out the location as well as identifying the other buildings. Most of the users were able to identify their current location as well as other buildings. Few users were able to identify where they were in the building. Because users were not at the Mattress factory we attributed this problem to their context.</p>
+					
+					<ul class="thumbnails">
+  						<li class="span3">
+    						<img src="img/report/user-testing-1.jpg" alt="Nicole conducting a user test.">
+						</li>
+						<li class="span3">
+    						<img src="img/report/user-testing-2.png" alt="Angela conducting a user test.">
+						</li>
+					</ul>
+
+					<h4>May 5, 2012</h4>
+					<p>Once we got most of the development done, we wanted to test the hi-fi prototype to get any last minute user input in and make the changes before the project was finished. We used our phones to test people on each floor. We handed them our phones and asked the users to walk around on the same floor to test it out. When they were done with the floor, we asked if they had any comments about the application. We also prompted them to tell us whether or not they thought it was useful, how the navigation was, and which functionalities they thought were useful.</p>
+
+					<p>We tested around 4-5 people on each floor. We found out that most people thought it was a really neat concept and found it useful. Everyone really liked the navigation concept that we had on the main screen and did not have any troubles with it.</p>
+
+					<p>On the details page, most people clicked the general info button but also clicked the temporary label on the piece.<p>
+
+					<p>However, because the application was not in its final stage of development, there were many bugs that arose. A recurring problem was that the page did not load fully at times, and it would only show the header bar with a white screen. This was mostly caused by pressing the back button that we implemented. Refreshing the page usually put the page back to being functional.</p>
+
+					<p>Nobody tried out the tagging because most people thought it was not functional due to their previous experience with all the bugs. When someone went to a new page that did not have any tags yet, this also caused problems because it shows an empty box with a tag button. The users were confused with what the tag button did.</p>
+
+					<p>Overall, the user testing was very helpful and we continued to iterate our design based on these results.</p>
+
+					<h3>Screenshots</h3>
+					<ul class="thumbnails">
+  						<li class="span3">
+    						<img src="img/report/home.png" alt="Home screen">
+						</li>
+						<li class="span3">
+    						<img src="img/report/detail.png" alt="Details page">
+						</li>
+					</ul>
+
+					<h3>Client Documentation</h3>
+					<table class="table table-bordered table-striped">
+  						<thead>
+    						<tr>
+      							<th>Column</th>
+      							<th>Description</th>
+    						</tr>
+  						</thead>
+  						<tbody>
+							<tr>
+							  <td><code>objectID</code></td>
+							  <td>Unique identifier, gernated automatically</td>
+							</tr>
+							<tr>
+							  <td><code>title</code></td>
+							  <td>Title of piece</td>
+							</tr>
+							<tr>
+							  <td><code>tips</code></td>
+							  <td>Guidance for visitor interaction with piece (example: Please don&#146;t touch)</td>
+							</tr>
+							<tr>
+							  <td><code>artist</code></td>
+							  <td>Artist&#146;s name</td>
+							</tr>
+							<tr>
+							  <td><code>building</code></td>
+							  <td>Building number where piece is located (500, 1414, or 516)</td>
+							</tr>
+							<tr>
+							  <td><code>description</code></td>
+							  <td>Media used to create piece (example: Drywall, paint, ultraviolet &amp; incandescent light)</td>
+							</tr>
+							<tr>
+							  <td><code>floorId</code></td>
+							  <td>Floor number that piece is located on</td>
+							</tr>
+							<tr>
+							  <td><code>year</code></td>
+							  <td>Year piece was installed</td>
+							</tr>
+							<tr>
+							  <td><code>imageUrlSmall</code></td>
+							  <td>Url from flickr in size Small 240</td>
+							</tr>
+							<tr>
+							  <td><code>info</code></td>
+							  <td>Artist statement or text to appear when user clicks "more info" for a piece</td>
+							</tr>
+							<tr>
+							  <td><code>status</code></td>
+							  <td>Permanent or temporary</td>
+							</tr>
+							<tr>
+							  <td><code>tagCounts</code></td>
+							  <td>This keeps track of all the tags. Generated automatically. Do not edit.</td>
+							</tr>
+							<tr>
+							  <td><code>imageUrl</code></td>
+							  <td>Url from flickr in size Medium 500</td>
+							</tr>
+							<tr>
+							  <td><code>createdAt</code> <code>updatedAt</code></td>
+							  <td>Generated automatically</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<div class="container">
+				<div class="span 10 offset1">
+					BHCI Project Course | Kraut &amp; Matsuda | Spring 2012
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>
