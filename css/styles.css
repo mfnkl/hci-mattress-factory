@@ -1,5 +1,6 @@
 /* 
 ** General tags + bootstrap overrides */
+
 a {
 	color: #ed1f24;
 }
@@ -26,7 +27,7 @@ input {
 /* 
 ** Header */
 #header {
-	position: absolute; z-index:3;
+	position: fixed; z-index:3;
 	top:0; left:0;
 	width: 100%;
 	line-height: 45px;
@@ -61,13 +62,12 @@ input {
 	left: 0;
 	height: 100%;
 	width:100%;
-	overflow:auto;
 }
 
 /* 
 ** Main index -- pieces list */
 
-.index #scroller {
+.index {
 	background: url("../img/white_brick_wall.png");
 }
 
@@ -80,13 +80,27 @@ div.building.active {
 }
 
 .floor {
+	width: 100%;
 	min-height: 400px;
-	padding-top: 10px;
+	padding: 10px 0 0 40px;
+}
+
+.floor h3 {
+	text-transform: capitalize;
+	font-size: .93em;
+	margin-bottom: 5px;
+}
+
+.pieces .floor {
+	display: none;
+}
+
+.pieces .floor.active {
+	display: block;
 }
 
 .floor ul {
-	padding: 0;
-	margin: 0 0 0 60px;
+	margin: 0;
 }
 
 .floor li a{
@@ -108,7 +122,13 @@ div.building.active {
 	width: 230px;
 	background: rgba(0,0,0,.7);
 	position: relative;
+	top: 96px;
+}
+
+.floor img {
+	position: relative;
 	top: -64px;
+	z-index: -10;
 }
 
 .floor .overlay i {
@@ -143,10 +163,11 @@ div.building.active {
 	width: 230px;
 	float: right;
 	margin-top: 45px;
-	padding: 15px 5px 15px 15px;
+	padding: 15px 30px 15px 15px;
 }
 
 .welcome h3 {
+	font-size: 1.231em;
 	line-height: 1.2em;
 	margin: 5px 0;
 }
@@ -171,11 +192,19 @@ div.building.active {
 	padding: 40px 10px;
 }
 
+.continue {
+	width: 225px;
+	margin: 0px 5px 15px 40px;
+	padding: 5px;
+	background: #fafafa;
+	border: 1px solid #ddd;
+}
+
 
 /* 
 ** Main index -- navigation sidebar */
 .nav {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	height: 100%;
@@ -248,6 +277,10 @@ div.building.active {
 	padding: 10px;
 }
 
+.container.detail {
+	min-height: 100%;
+}
+
 .detail img {
 	width: 100%;
 }
@@ -318,6 +351,12 @@ div.building.active {
 	width: 200px;
 }
 
+#info {
+	min-height: 100%;
+	display: none;
+	margin-top: 30px;
+}
+
 /* info & map */
 .content.info {
 	padding-top: 40px;
@@ -335,30 +374,13 @@ img.hours {
 	width: 200px;
 }
 
-.content.map {
-	padding: 40px 0 0 0;
+.container.map {
+	text-align: center;
 }
 
-.map img {
-	width: 100%;
-}
-
-.map .floor-view {
-	padding: 10px;
-	display: none;
-}
-
-.map .floor-view img {
-	width: 85%;
-}
-
-.map .floor-view h1 {
-	margin: 0;
-	display: inline-block;
-}
-
-.map .floor-view li {
-	margin: 10px 0;
+.main-map {
+	height: 385px;
+	margin-top: 36px;
 }
 
 

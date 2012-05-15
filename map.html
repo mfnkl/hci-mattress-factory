@@ -10,103 +10,15 @@
 	<link href="css/styles.css" rel="stylesheet" type="text/css" media="screen" />
 
 	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-	<script type="text/javascript" src="js/vendor/iscroll.js"></script>
-		<script type="text/javascript">
-			var myScroll;
-			function loaded() {
-				$(".floor-view.main").show();
-				myScroll = new iScroll('wrapper');
-			}
-
-			document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
-
-			/* Use this for high compatibility (iDevice + Android)*/
-			document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 200); }, false);
-		</script>
 </head> 
 
 
-<body> 
+<body onload=" setTimeout( function(){ window.scrollTo(0, 0) }, 0); "> 
 	<div id="header">
-		<a class="btn btn-inverse btn-small back" href="index.html"><i class="icon-chevron-left icon-white"></i> Back</a>
-		<img src="img/mflogo.png" />
+			<a class="btn btn-inverse btn-small back" href="index.html"><i class="icon-chevron-left icon-white"></i> Back</a>
 	</div>
-	<div class="container">
-		<div id="wrapper">				
-			<div id="scroller">
-				<div class="content map">
-					<img src="img/mainmap2.png" usemap="#main">
-					<map name="main">
-						<area shape="rect" coords="135,55,30,98" data-building="two-1414">
-						<area shape="rect" coords="260,115,223,165" data-building="three-516">
-						<area shape="rect" coords="414,67,350,160" data-building="main">
-					</map>
-
-					<div class="floor-view main">
-						<h3>500 Sampsonia - Floor View</h3>
-						<ul>
-							<li>
-								<a href="index.html#floor-4-500">
-									<img src="img/44floor.png" />
-									<h1>4</h1>
-								</a>
-							</li>
-							<li>
-								<a href="index.html#floor-3-500">
-									<img src="img/33floor.png" />
-									<h1>3</h1>
-								</a>
-							</li>
-							<li>
-								<a href="index.html#floor-2-500">
-									<img src="img/22floor.png" />
-									<h1>2</h1>
-								</a>
-							</li>
-							<li>
-								<a href="index.html#floor-1-500">
-									<img src="img/11floor.png" />
-									<h1>1</h1>
-								</a>
-							</li>
-							<li>
-								<a href="index.html#floor-0-500">
-									<img src="img/LLLfloor.png" />
-									<h1>LL</h1>
-								</a>
-							</li>
-						</ul>
-					</div>
-
-					<div class="floor-view two-1414">
-						<h3>1414 Monterey - Floor View</h3>
-						<ul>
-							<li>
-								<a href="index.html#floor-3-500">
-									<img src="img/33floor.png" />
-									<h1>3</h1>
-								</a>
-							</li>
-							<li>
-								<a href="index.html#floor-2-500">
-									<img src="img/22floor.png" />
-									<h1>2</h1>
-								</a>
-							</li>
-							<li>
-								<a href="index.html#floor-1-500">
-									<img src="img/11floor.png" />
-									<h1>1</h1>
-								</a>
-							</li>
-						</ul>
-					</div>
-
-					<div class="floor-view three-516">
-						<h3>516 Sampsonia Way is under construction</h3>
-					</div>
-				</div>
-			</div>
-		</div>
+	<div class="container map">
+		<img src="img/mainmap.png" class="main-map">
+	</div>
 </body>
 </html>

@@ -129,7 +129,6 @@
 			newHTML += '</a>';
 		}
 		document.getElementById("tags").innerHTML = newHTML;
-		myScroll.refresh();
 	});
 	
   }
@@ -161,7 +160,13 @@
         });
         content.html(html);
 		
-		myScroll.refresh();
+		$('.more-info').click(function(){
+			$('#info').show();
+
+			$('html, body').stop().animate({
+        		scrollTop: $("#info").offset().top
+    		}, 400);
+		});
     });
     
     

@@ -7,18 +7,8 @@
 		<link rel="stylesheet" href="css/styles.css" />
 
 		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-		<script type="text/javascript" src="js/vendor/iscroll.js"></script>
 		<script type="text/javascript">
-			var myScroll;
 			function loaded() {
-				myScroll = new iScroll('wrapper');
-				var tagField = document.getElementById('tag-field');
-				tagField.addEventListener('touchstart' /*'mousedown'*/, function(e) {
-					e.stopPropagation();
-				}, false);
-				tagField.addEventListener('mousedown', function(e) {
-					e.stopPropagation();
-				}, false);
 
 				$('form').submit(function(e){
 					e.preventDefault();
@@ -28,8 +18,6 @@
 					input.val('');
 				});
 			}
-
-			document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
 
 			/* Use this for high compatibility (iDevice + Android)*/
 			document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 200); }, false);
@@ -48,7 +36,7 @@
  
 		</script>
 	</head>
-	<body>
+	<body onload=" setTimeout( function(){ window.scrollTo(0, 1) }, 0); ">
 		<div id="header">
 			<a class="btn btn-inverse btn-small back" href="index.html"><i class="icon-chevron-left icon-white"></i> Back</a>
 			<img src="img/mflogo.png">
@@ -70,16 +58,18 @@
 						<li class="artist"><%= artist %></li>
 						<li class="title"><em><%= title %></em>, <%=year%></li>
 						<li><%= description %></li> 
-					</ul>	
+					</ul>
 					<span class="label label-important"> <%=status%> </span>
 					<a class="more-info">More Info >></a>
+
 				</div>
 				
 				<% if (tips !== "") { %>
-					<div class="alert">
-						<strong>Tip:</strong> <%=tips%>
-					</div>
-				<% } %>
+						<div class="alert">
+							<strong>Tip:</strong> <%=tips%>
+						</div>
+					<% } %>					
+			
 				
 			</div>
 
@@ -97,14 +87,15 @@
 					<button type="submit" id="tag-button" class="btn"><i class="icon-tag"></i> Add Tag</button>
 				</form>
 			</div>	
+
+			<div id="info" class="content">
+				<%= info %>
+			</div>
 		</script>
 
 		
 		<script type="application/javascript" src = "js/vendor/jquery.parse.js"></script>
-		<script type="application/javascript" src="js/vendor/tmpl.js"></script>
-		<script type="application/javascript" src="js/vendor/bootstrap.min.js"></script>
-
-		
+		<script type="application/javascript" src="js/vendor/tmpl.js"></script>		
 		<script type="application/javascript" src="js/detail.js"></script>
 	</body>
 </html>

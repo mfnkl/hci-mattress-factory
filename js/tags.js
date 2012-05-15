@@ -1,6 +1,6 @@
 (function(GLOBAL, $, tmpl) {
   
-  var piece_list, piece_detail; 
+  var piece_list; 
 
   $.parse.init({
       app_id: "LKndLqOkr8fE4AH7BcfpmJbXNJMW6ElrMPHGI7iY", // <-- enter your Application Id here
@@ -9,7 +9,6 @@
 
   function init() {
     piece_list = $("#scroller");
-    piece_detail = $("#piece_detail");
     return GLOBAL.pieces;
   }
 
@@ -21,7 +20,7 @@
 
         results = json.results;
         html = "";
-		pieceList = json.results[0].pieceIds;
+		    pieceList = json.results[0].pieceIds;
 
         if (results.length === 0) {
             return false;
@@ -42,7 +41,6 @@
 			});
         });
 
-		myScroll.refresh();
     });
 	
   }

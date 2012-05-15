@@ -7,28 +7,14 @@
 		<link rel="stylesheet" href="css/styles.css" />
 
 		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-		<script type="text/javascript" src="js/vendor/iscroll.js"></script>
-		<script type="text/javascript">
-			var myScroll;
-			function loaded() {
-				myScroll = new iScroll('wrapper');
-			}
-
-			document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
-
-			/* Use this for high compatibility (iDevice + Android)*/
-			document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 200); }, false);
-		</script>
 	</head>
-	<body>
+	<body onload=" setTimeout( function(){ window.scrollTo(0, 1) }, 0); ">
 		<div id="header">
 			<a class="btn btn-inverse btn-small back" href="index.html"><i class="icon-chevron-left icon-white"></i> Back</a>
 			<img src="img/mflogo.png" />
 		</div>
 		<div class="container">
-			<div id="wrapper">				
-				<div id="scroller">
-					<div class="content info">
+			<div class="content info">
 					<h3>Hours</h3>
 				 	<img class="hours" src="img/hours.png" alt="Sunday: 1pm-5pm, Tuesday-Friday: 10am-5pm" />
 					<p><em>Closed Mondays, New Year's Day, Easter, Memorial Day, Independence Day, Thanksgiving, Christmas Eve, Christmas Day and New Year's Eve.</em></p>
@@ -55,8 +41,6 @@
 					<h3>Parking [<a href="http://maps.google.com/maps?f=q&hl=en&geocode=&q=505+Jacksonia+St,+Pittsburgh,+PA+15212&sll=40.459471,-80.012269&sspn=0.011837,0.028582&layer=c&ie=UTF8&cbll=40.457425,-80.012218&cbp=13,194.75,,0,1.48&ll=40.460107,-80.012248&spn=0.011379,0.025706&z=16&iwloc=A&panoid=ctr96TZ2dn_qYcM0TFK4CQ" target="_blank">Map</a>] </h3>
 					<p>The museum parking lot is located at 505 Jacksonia Street.</p>
 				
-					</div>
-				</div>
 			</div>
 		</div>
 		

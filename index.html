@@ -12,18 +12,15 @@
 			<img src="img/mflogo.png" />
 			<a class="btn btn-inverse btn-small info" href="info.html"><i class="icon-info-sign icon-white"></i> Info</a>
 		</div>
-		<div id="loading">
-			Loading...
-		</div>
-		<div class="container">
+		<div class="container"> 
 			<div class="nav" id="navbar">
 				<ul>
 					<li class="building-title" data-to-show=".nav-500" data-building="500">500</li>
-					<li class="nav-500"><a data-link="#floor-4-500" class="scrollTo">4</a></li>
-					<li class="nav-500"><a data-link="#floor-3-500" class="scrollTo">3</a></li>
-					<li class="nav-500"><a data-link="#floor-2-500" class="scrollTo">2</a></li>
-					<li class="nav-500"><a data-link="#floor-1-500" class="scrollTo first">1</a></li>
-					<li class="nav-500"><a data-link="#floor-0-500" class="scrollTo">LL<i class="icon-restroom"></i></a></li>
+					<li class="nav-500"><a href="#floor-4-500" class="scrollTo">4</a></li>
+					<li class="nav-500"><a href="#floor-3-500" class="scrollTo">3</a></li>
+					<li class="nav-500"><a href="#floor-2-500" class="scrollTo">2</a></li>
+					<li class="nav-500"><a href="#floor-1-500" class="scrollTo">1</a></li>
+					<li class="nav-500"><a href="#floor-0-500" class="scrollTo">LL<i class="icon-restroom"></i></a></li>
 					
 					<li class="building-title" data-to-show=".nav-1414" data-building="1414">1414</li>
 					<li class="nav-1414"><a data-link="#floor-3-1414" class="scrollTo">3</a></li>
@@ -36,57 +33,96 @@
 					<li class="nav-516"><a data-link="#floor-1-516" class="scrollTo first">1</a></li>
 				</ul>
 			</div>
-			<div id="wrapper">				
-				<div id="scroller" data-spy="scroll" data-target="#navbar">
 
+			<div class="pieces" data-spy="scroll" data-target"#navbar">
+				<section class="floor active" id="floor-4-500" data-floor="4" data-building="500" data-title="fourth floor"></section>
+				<section class="floor active" id="floor-3-500" data-floor="3" data-building="500" data-title="third floor"></section>
+				<section class="floor active" id="floor-2-500" data-floor="2" data-building="500" data-title="second floor"></section>
+				<section class="floor active" id="floor-1-500" data-floor="1" data-building="500" data-title="first floor">
+					<div class="welcome">
+						<h4>Welcome!</h4>
+						<h3>To begin your tour, please tap the <a href="#floor-4-500" class="scrollTo">4th floor</a></h3>
+						<em>You can take the elevator or the stairs.</em>
+						<p><i class="icon-gift"></i> Visit our gift shop on this floor</p>
+						<h4>Announcements:</h4>		
+						<ul class="announcements">
+				
+						</ul>
+					</div>
+				</section>
+				<section class="floor active" id="floor-0-500" data-floor="0" data-building="500" data-title="lower level"></section>
+				<section class="continue">Please continue to 1414 Monterey Street to view more exhibits [<a href="map.html">Map</a>]</section>
+				
+				<section class="floor" id="floor-3-1414" data-floor="3" data-building="1414" data-title="third floor"></section>
+				<section class="floor" id="floor-2-1414" data-floor="2" data-building="1414" data-title="second floor"></section>
+				<section class="floor" id="floor-1-1414" data-floor="1" data-building="1414" data-title="first floor"></section>
 
-				</div>
+				<section class="floor" id="floor-1-516" data-floor="1" data-building="516">
+					<div class="welcome">
+						<h3>516 is currently under construction. Please, check back soon.</h3>
+					</div>
+				</section>
 			</div>
 		</div>
 		
 		<script type="text/html"  id="piece_tmpl">
 			<li> 
 				<a href="detail.html?i=<%=objectId%>">
-					<img src="<%=imageUrlSmall%>" />
 					<span class="overlay">
 						<i class="icon-chevron-right icon-white"></i>
 						<span class="artist"> <%= artist %> </span>
 						<%= title %>
 					</span>	
+					<img src="<%=imageUrlSmall%>" />
 				</a>
 			</li>
 		</script>
 		
-		<script type="text/html" id="500_welcome_message">
-			<div class="welcome">
-				<h4>Welcome!</h4>
-				<h3>To begin your tour, please tap the <a data-link="#floor-4-500" class="scrollTo">4th floor</a></h3>
-				<em>You can take the elevator or the stairs.</em>
-				<p><i class="icon-gift"></i> Visit our gift shop on this floor</p>
-				<h4>Announcements:</h4>		
-				<ul class="announcements">
-					<li>
-						<date>June 15th</date> - 
-						Get ready for the Urban Garden Party &#147;Alice At the Factory&#148;
-					</li>
-				</ul>
-			</div>
-		</script>
-		
-		<script type="text/html" id="516_welcome_message">
-			<div class="welcome">
-				<h3>516 is currently under construction. Please, check back soon.</h3>
-			</div>
+		<script type="text/html" id="announcement_tmpl">
+			<li>
+				<date><%= when %></date> - 
+				<%= content %>
+			</li>
 		</script>
 
 		
 		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-		<script type="text/javascript" src="js/vendor/iscroll.js"></script>
 		<script type="application/javascript" src = "js/vendor/jquery.parse.js"></script>
 		<script type="application/javascript" src="js/vendor/tmpl.js"></script>
-		<script type="application/javascript" src="js/vendor/bootstrap.min.js"></script>
+		<script type="application/javascript" src="js/vendor/bootstrap-scrollspy.js"></script>
 		
-		<script type="text/javascript" src="js/script.js"></script>
 		<script type="application/javascript" src="js/pieces.js"></script>
+		<script>
+			$('a.scrollTo').bind('click',function(event){
+   				var $anchor = $(this);
+			   	$('html, body').stop().animate({
+    	        	scrollTop: $($anchor.attr('href')).offset().top - 40
+        		}, 800);
+        		event.preventDefault();
+			});
+
+			$('.nav li').bind('touchstart',function(event){
+   				var $anchor = $(this).children('a');
+			   	$('html, body').stop().animate({
+    	        	scrollTop: $($anchor.attr('href')).offset().top
+        		}, 800);
+        		event.preventDefault();
+			});
+
+			$('.building-title').bind('click',function(event){
+				var that = $(this);
+				var navItems = that.attr('data-to-show');
+				var building = that.attr('data-building');
+
+				$('.floor.active').hide().removeClass('active');
+				$('.floor[data-building='+building+']').show().addClass('active');
+				$('html, body').stop().animate({
+    	    	    scrollTop: $('#floor-1-'+building).offset().top
+        		}, 800);
+
+				$('.nav li[class!="building-title"]').slideUp();
+				$(navItems).slideDown();
+			});
+	    </script>
 	</body>
 </html>
