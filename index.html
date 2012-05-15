@@ -19,22 +19,22 @@
 					<li class="nav-500"><a href="#floor-4-500" class="scrollTo">4</a></li>
 					<li class="nav-500"><a href="#floor-3-500" class="scrollTo">3</a></li>
 					<li class="nav-500"><a href="#floor-2-500" class="scrollTo">2</a></li>
-					<li class="nav-500"><a href="#floor-1-500" class="scrollTo">1</a></li>
+					<li class="nav-500"><a href="#floor-1-500" class="welcome-floor scrollTo">1</a></li>
 					<li class="nav-500"><a href="#floor-0-500" class="scrollTo">LL<i class="icon-restroom"></i></a></li>
 					
 					<li class="building-title" data-to-show=".nav-1414" data-building="1414">1414</li>
-					<li class="nav-1414"><a data-link="#floor-3-1414" class="scrollTo">3</a></li>
-					<li class="nav-1414"><a data-link="#floor-2-1414" class="scrollTo">2</a></li>
-					<li class="nav-1414"><a data-link="#floor-1-1414" class="scrollTo first">1<i class="icon-restroom"></i></a></li>
+					<li class="nav-1414"><a href="#floor-3-1414" class="scrollTo">3</a></li>
+					<li class="nav-1414"><a href="#floor-2-1414" class="scrollTo">2</a></li>
+					<li class="nav-1414"><a href="#floor-1-1414" class="welcome-floor scrollTo">1<i class="icon-restroom"></i></a></li>
 					
 					<li class="building-title" data-to-show=".nav-516" data-building="516">516</li>
-					<li class="nav-516"><a data-link="#floor-3-516" class="scrollTo">3</a></li>
-					<li class="nav-516"><a data-link="#floor-2-516" class="scrollTo">2</a></li>
-					<li class="nav-516"><a data-link="#floor-1-516" class="scrollTo first">1</a></li>
+					<li class="nav-516"><a href="#floor-3-516" class="scrollTo">3</a></li>
+					<li class="nav-516"><a href="#floor-2-516" class="scrollTo">2</a></li>
+					<li class="nav-516"><a href="#floor-1-516" class="welcome-floor scrollTo">1</a></li>
 				</ul>
 			</div>
 
-			<div class="pieces" data-spy="scroll" data-target"#navbar">
+			<div class="pieces">
 				<section class="floor active" id="floor-4-500" data-floor="4" data-building="500" data-title="fourth floor"></section>
 				<section class="floor active" id="floor-3-500" data-floor="3" data-building="500" data-title="third floor"></section>
 				<section class="floor active" id="floor-2-500" data-floor="2" data-building="500" data-title="second floor"></section>
@@ -51,7 +51,7 @@
 					</div>
 				</section>
 				<section class="floor active" id="floor-0-500" data-floor="0" data-building="500" data-title="lower level"></section>
-				<section class="continue">Please continue to 1414 Monterey Street to view more exhibits [<a href="map.html">Map</a>]</section>
+				<section class="continue active" data-building="500">Please continue to 1414 Monterey Street to view more exhibits [<a href="map.html">Map</a>]</section>
 				
 				<section class="floor" id="floor-3-1414" data-floor="3" data-building="1414" data-title="third floor"></section>
 				<section class="floor" id="floor-2-1414" data-floor="2" data-building="1414" data-title="second floor"></section>
@@ -89,39 +89,44 @@
 		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 		<script type="application/javascript" src = "js/vendor/jquery.parse.js"></script>
 		<script type="application/javascript" src="js/vendor/tmpl.js"></script>
-		<script type="application/javascript" src="js/vendor/bootstrap-scrollspy.js"></script>
 		
 		<script type="application/javascript" src="js/pieces.js"></script>
 		<script>
-			$('a.scrollTo').bind('click',function(event){
-   				var $anchor = $(this);
-			   	$('html, body').stop().animate({
-    	        	scrollTop: $($anchor.attr('href')).offset().top - 40
+			function changeFloors(anchor) {
+				var $anchor = anchor;
+				var $element = $anchor.attr('href');
+
+				$('html, body').stop().animate({
+    	        	scrollTop: $($element).offset().top - 38
         		}, 800);
-        		event.preventDefault();
+
+				$('.nav li').removeClass('active');
+				$anchor.parent('li').addClass('active');
+			}
+			$('a.scrollTo').bind('click',function(event){
+   				changeFloors($(this));
 			});
 
 			$('.nav li').bind('touchstart',function(event){
-   				var $anchor = $(this).children('a');
-			   	$('html, body').stop().animate({
-    	        	scrollTop: $($anchor.attr('href')).offset().top
-        		}, 800);
-        		event.preventDefault();
+   				changeFloors($(this).children('a'));
 			});
 
 			$('.building-title').bind('click',function(event){
 				var that = $(this);
 				var navItems = that.attr('data-to-show');
 				var building = that.attr('data-building');
+				var firstAnchor = $('.nav-'+building+' .welcome-floor');
 
-				$('.floor.active').hide().removeClass('active');
-				$('.floor[data-building='+building+']').show().addClass('active');
-				$('html, body').stop().animate({
-    	    	    scrollTop: $('#floor-1-'+building).offset().top
-        		}, 800);
+				// hide pieces not in this building
+				$('section.active').hide().removeClass('active');
+				$('section[data-building='+building+']').show().addClass('active');
 
+				// toggle correct navigation
 				$('.nav li[class!="building-title"]').slideUp();
 				$(navItems).slideDown();
+
+				// redirect to first floor
+				changeFloors(firstAnchor);
 			});
 	    </script>
 	</body>

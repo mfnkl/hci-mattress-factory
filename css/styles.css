@@ -24,6 +24,11 @@ input {
 	padding: 5px;
 }
 
+.container {
+	max-width: 100%;
+	overflow: hidden;
+}
+
 /* 
 ** Header */
 #header {
@@ -67,28 +72,25 @@ input {
 /* 
 ** Main index -- pieces list */
 
-.index {
+body.index {
+	padding: 0;
 	background: url("../img/white_brick_wall.png");
-}
-
-div.building {
-	display: none;
-}
-
-div.building.active {
-	display: block;
 }
 
 .floor {
 	width: 100%;
 	min-height: 400px;
-	padding: 10px 0 0 40px;
+	padding: 10px 0 0 60px;
 }
 
 .floor h3 {
 	text-transform: capitalize;
 	font-size: .93em;
 	margin-bottom: 5px;
+}
+
+.pieces {
+	margin-top: 38px;
 }
 
 .pieces .floor {
@@ -142,16 +144,19 @@ div.building.active {
 }
 
 #floor-1-500 {
-	padding-top: 35px;
-}
-
-#floor-1-500 {
 	background: url(../img/background.gif) no-repeat;
-	background-size: cover;
 }
 
 #floor-1-516 {
 	background: url(http://farm7.static.flickr.com/6040/6306058579_ffef6e6f0e_z.jpg) no-repeat right center;
+	background-size: cover;
+}
+
+#floor-1-500,
+#floor-1-516 {
+	width: 100%;
+	padding: 35px 0 0 0;
+	margin: 0;
 	background-size: cover;
 }
 
@@ -163,7 +168,7 @@ div.building.active {
 	width: 230px;
 	float: right;
 	margin-top: 45px;
-	padding: 15px 30px 15px 15px;
+	padding: 15px 5px 15px 15px;
 }
 
 .welcome h3 {
@@ -193,8 +198,8 @@ div.building.active {
 }
 
 .continue {
-	width: 225px;
-	margin: 0px 5px 15px 40px;
+	width: 228px;
+	margin: -15px 5px 15px 60px;
 	padding: 5px;
 	background: #fafafa;
 	border: 1px solid #ddd;
@@ -385,17 +390,13 @@ img.hours {
 
 
 /* Tag page */
-.tag-list ul {
-	margin: 0;
+.tagged-pieces .floor {
+	padding: 38px 10px 0 10px;
 }
 
-.tag-list li a{
-	margin-left: auto;
-    margin-right: auto;
+.tagged-pieces .floor img {
+	top: 0;
 }
-
-.tag-title h3 {
-	padding-top: 35px;
-	padding-left: 10px;
-	line-height: 1.2em;
+.tagged-pieces .floor .overlay {
+	top: -64px;
 }

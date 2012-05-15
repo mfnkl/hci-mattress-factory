@@ -24,7 +24,7 @@
 	       	if (results.length > 0) {	
 	       		html = '<h3>'+title+'</h3><ul>';
 				    results.forEach(function(piece) {
-					   html += tmpl("piece_tmpl", piece);
+              html += tmpl("piece_tmpl", piece);
 				    });
 			     	html += "</ul>";
 				    container.html(html);
@@ -38,7 +38,7 @@
 
         results = json.results;
         html = "";
-        
+
         if (results.length > 0) {
           results.forEach(function(a) {
             html += tmpl("announcement_tmpl", a);
@@ -49,8 +49,9 @@
     });
     
     $('html, body').stop().animate({
-        scrollTop: $("#floor-4-500").offset().top
-    }, 1000);
+        scrollTop: $("#floor-1-500").offset().top + 102
+    }, 800);
+    $('.nav-500 .welcome-floor').parent('li').addClass('active');
 
   }
 
