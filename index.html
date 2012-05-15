@@ -93,8 +93,8 @@
 		<script type="application/javascript" src="js/pieces.js"></script>
 		<script>
 			function changeFloors(anchor) {
-				var $anchor = anchor;
-				var $element = $anchor.attr('href');
+				var $element = anchor.attr('href');
+				var $anchor = $('.nav a[href="'+$element+'"]');
 
 				$('html, body').stop().animate({
     	        	scrollTop: $($element).offset().top - 38
@@ -105,10 +105,6 @@
 			}
 			$('a.scrollTo').bind('click',function(event){
    				changeFloors($(this));
-			});
-
-			$('.nav li').bind('touchstart',function(event){
-   				changeFloors($(this).children('a'));
 			});
 
 			$('.building-title').bind('click',function(event){
